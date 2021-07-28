@@ -1,0 +1,17 @@
+Page accueil[
+
+    Afficher slide
+    xMeilleurs vente
+    Categories recentes
+    Plats recents
+    xPromotions
+    Restaurants recents
+    Partenairs recents
+]
+
+Page nos Menus
+Page Categories
+Page Contact
+Page A propos
+Page Inscription
+Page Connexion

@@ -1,0 +1,254 @@
+### CATEGORIE
+GET  http://localhost:8000/api/v1/categories-liste
+###
+GET  http://localhost:8000/api/v1/show-categorie/6014067be109000074002bf3
+
+###
+DELETE   http://localhost:8000/api/v1/delete-categorie/6008fd7d441c0000380030b3
+
+###
+POST  http://localhost:8000/api/v1/categorie
+Content-Type: : application/json
+{
+  "nom": "Natural jus",
+  "description": "<p> Hello to my natural jus<\/p>",
+  "status": "disabled",
+  "image": "CANBAT2.png_1611586457.png"
+}
+###
+PUT http://localhost:8000/api/v1/categorie
+Content-Type: : application/json
+{
+  "nom": "Natural export",
+  "description": "<p> Hello to my natural jus<\/p>",
+  "status": "disabled",
+  "image": "CANBAT2.png_1611586457.png"
+}
+
+
+
+###########################################################################
+
+### ENTREPRISE
+GET  http://localhost:8000/api/v1/entreprise-liste
+
+###
+GET  http://localhost:8000/api/v1/entreprise-show/60140b07e109000074002bf4
+
+###
+PUT  http://localhost:8000/api/v1/entreprise-edit/60140b07e109000074002bf4
+Content-Type: application/json
+ {
+  "nom": "Mercedez",
+  "telephone": "666002211",
+  "adresse": "Nongo conakry",
+  "representant": "Bah",
+  "logo": "mercedez4.png_1611574175.png",
+  "max_credit": "20000",
+  "status": "disabled"
+}
+
+###
+POST http://localhost:8000/api/v1/entreprise-add
+Content-Type: application/json
+ {
+  "nom": "Kofi Annan",
+  "telephone": "666002211",
+  "adresse": "conakry",
+  "representant": "Bah",
+  "logo": "mercedez4.png_1611574175.png",
+  "max_credit": "20000",
+  "status": "disabled"
+}
+ 
+###
+DELETE http://localhost:8000/api/v1/entreprise-delete/60140b07e109000074002bf4
+ 
+###########################################################################
+
+### RESTAURANT
+GET  http://localhost:8000/api/v1/restaurant-liste
+
+###
+GET  http://localhost:8000/api/v1/restaurant-show/60142789e109000074002bf6
+
+###
+PUT http://localhost:8000/api/v1/restaurant-edit/60142789e109000074002bf6
+Content-Type: application/json
+
+{
+  "nom": "Croissanterie",
+  "telephone": "611002233",
+  "adresse": "kip\u00e9 conakry",
+  "longitude": "11500",
+  "latitude": "22400",
+  "gerant": "Ousmane Kaba",
+  "commission": "2000",
+  "status": "enabled",
+  "logo": "c2_r.png_1611409381.png"
+}
+
+###
+POST http://localhost:8000/api/v1/restaurant-add/
+Content-Type: application/json
+
+{
+  "nom": "Croissanterie",
+  "telephone": "621112233",
+  "adresse": "kipé conakry",
+  "longitude": "11500",
+  "latitude": "22400",
+  "gerant": "Ousmane Kaba",
+  "logo": "c2_r.png_1611409381.png",
+  "commission": "2000",
+  "status": "enabled"
+}
+
+###
+DELETE http://localhost:8000/api/v1/restaurant-delete/60142543e109000074002bf5
+ 
+###
+GET  http://localhost:8000/api/v1/restaurant-disable/60142789e109000074002bf6
+
+###########################################################################
+
+### Menu
+GET  http://localhost:8000/api/v1/menu-liste/60142789e109000074002bf6
+
+###
+GET  http://localhost:8000/api/v1/menu-show/60142789e109000074002bf6/p0012
+
+###
+POST http://localhost:8000/api/v1/menu-add/
+Content-Type: application/json
+
+{ 
+  "id": "60142789e109000074002bf6",
+  "nom": "mango",
+  "poids": "0.5kg",
+  "identifiant": "mg0012",
+  "discountprice": "50",
+  "prix": "15000",
+  "categorie": "Natural jus",
+  "description": "<p>Hello to you my poisson<\/p>",
+  "populaire": "non",
+  "status": "disabled",
+  "image": "canbat.png_1611587672.png"
+}
+
+###
+PUT http://localhost:8000/api/v1/menu-edit/60142789e109000074002bf6
+Content-Type: application/json
+
+{ 
+  "nom": "mango",
+  "poids": "0.5kg",
+  "identifiant": "mg0012",
+  "discountprice": "500",
+  "prix": "15000",
+  "categorie": "Natural jus",
+  "description": "<p>Hello to you my poisson<\/p>",
+  "populaire": "non",
+  "status": "disabled",
+  "image": "canbat.png_1611587672.png"
+}
+
+###
+DELETE  http://localhost:8000/api/v1/menu-delete/60142789e109000074002bf6/mg0012
+ 
+
+###########################################################################
+
+### UTILISATEUR
+
+###
+POST http://localhost:8000/api/v1/login/
+Content-Type: application/json
+
+{
+  
+  "email": "test@gmail.com",
+  "password": "12345678"
+   
+}
+###
+GET  http://localhost:8000/api/v1/list-users
+
+###
+GET  http://localhost:8000/api/v1/show-user/60143a310d0700001b0039f2
+
+###
+POST http://localhost:8000/api/v1/add-user/
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Test",
+  "email": "test@gmail.com",
+  "role_id": 1,
+  "phone": "627242636",
+  "password": "12345678",
+  "password_confirmation": "12345678",
+  "status": true
+}
+
+###
+PUT http://localhost:8000/api/v1/edit-user/60142d17e109000074002bf9
+Content-Type: application/json
+
+{
+  "firstName": "Test",
+  "lastName": "Test",
+  "phone": "627242636",
+  "email": "Test@gmail.com",
+  "role_id": 1,
+  "password": "12345678",
+  "password_confirmation": "12345678",
+  "status": true
+}
+###
+DELETE  http://localhost:8000/api/v1/delete-user/60143a310d0700001b0039f2
+ 
+###
+GET   http://localhost:8000/api/v1/user-disable/60142c8ee109000074002bf8
+ 
+###########################################################################
+### Partenaire
+GET  http://localhost:8000/api/v1/partenaire-liste
+
+###
+GET  http://localhost:8000/api/v1/show-partenaire/60143dae0d0700001b0039f3
+
+###
+POST http://localhost:8000/api/v1/partenaire-add/
+Content-Type: application/json
+
+{
+   "nom": "Bank Mondial",
+  "representant": "bah",
+  "telephone": "620334455",
+  "email": "mondial@gmail.com",
+  "adresse": "petitsymbaya",
+  "status": "enabled",
+  "logo": "peugeot_84e51e2e8361e380772edfd1fc8b22a04c3b8c25.jpeg"
+}
+
+###
+PUT http://localhost:8000/api/v1/partenaire-edit/60143dae0d0700001b0039f3
+Content-Type: application/json
+
+{
+   "nom": "Bank Mondial",
+  "representant": "Bah Mamadou",
+  "telephone": "620334455",
+  "email": "mondial@gmail.com",
+  "adresse": "petitsymbaya",
+  "status": "enabled",
+  "logo": "peugeot_84e51e2e8361e380772edfd1fc8b22a04c3b8c25.jpeg"
+}
+###
+DELETE http://localhost:8000/api/v1/partenaire-delete/60143dae0d0700001b0039f3
+
+###########################################################################
+###
+GET  http://localhost:8000/api/v1/livreur-liste
