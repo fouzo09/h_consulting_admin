@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.tpl')
 @section('content')
     <div class="row">
         <div class="col-sm-12">

@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.tpl')
 @section('content')
     <div class="col-sm-6 col-lg-offset-3">
         <div class="panel">
