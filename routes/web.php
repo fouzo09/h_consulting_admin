@@ -23,11 +23,52 @@ Route::get('test',function(){
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('layouts.tpl');
 });
 
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
+
+    /**
+     * Service routes
+     */
+
+    Route::get('list-services', 'ServiceController@getIndex')->name('list.services');
+    Route::get('add-service', 'ServiceController@getAdd')->name('add.service');
+    Route::post('add-service', 'ServiceController@postAdd')->name('add.service');
+
+    /**
+     * Actualite routes
+     */
+
+    Route::get('list-actualites', 'ActualiteController@getIndex')->name('list.actualites');
+    Route::get('add-actualite', 'ActualiteController@getAdd')->name('add.actualite');
+    Route::post('add-actualite', 'ActualiteController@postAdd')->name('add.actualite');
+
+    /**
+     * Formations routes
+     */
+
+    Route::get('list-formations', 'FormationController@getIndex')->name('list.formations');
+    Route::get('add-formation', 'FormationController@getAdd')->name('add.formation');
+    Route::post('add-formation', 'FormationController@postAdd')->name('add.formation');
+
+    /**
+     * Entreprise routes
+     */
+
+    Route::get('list-entreprises', 'EntrepriseController@getIndex')->name('list.entreprises');
+    Route::get('add-entreprise', 'EntrepriseController@getAdd')->name('add.entreprise');
+    Route::post('add-entreprise', 'EntrepriseController@postAdd')->name('add.entreprise');
+
+    /**
+     * Offres d'emplois routes
+     */
+
+    Route::get('list-offres-emplois', 'EmploiController@getIndex')->name('list.offres-emplois');
+    Route::get('add-offre-emploi', 'EmploiController@getAdd')->name('add.offre-emploi');
+    Route::post('add-offre-emploi', 'EmploiController@postAdd')->name('add.offre-emploi');
+
     Route::get('show-user/{id}','RoleController@show')->name('user.show');
     Route::get('user-disable/{id}','UserController@disable')->name('disable');
     
