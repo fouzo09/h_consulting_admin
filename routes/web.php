@@ -81,7 +81,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     // Route::get('edit-user-form/{id}','UserController@edit')->name('user.edit.form')->middleware('auth');
     // Route::post('edit-user/{id}','UserController@update')->name('user.edit')->middleware('auth');
     // Route::get('delete-user/{id}','UserController@destroy')->name('user.delete')->middleware('auth');
-    // Route::get('logout-user','UserController@logout')->name('logout.user')->middleware('auth');
+    Route::get('logout-user','UserController@logout')->name('logout.user')->middleware('auth');
     // Route::get('new-password','UserController@updatePasswordForm')->name('new.password.form')->middleware('auth');
     // Route::post('new-password','UserController@updatePassword')->name('new.password')->middleware('auth');    
   
@@ -90,13 +90,13 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
      * Roles routes
      */
     
-    Route::get('role','RoleController@create')->name('role-form')->middleware('auth');
-    Route::post('role','RoleController@store')->name('role-store')->middleware('auth');    
-    Route::get('role-liste','RoleController@index')->name('role-index')->middleware('auth');
-    Route::get('show-role/{id}','RoleController@show')->name('role-show')->middleware('auth');    
-    Route::get('edit-role-form/{id}','RoleController@edit')->name('role.edit.form')->middleware('auth');
-    Route::post('edit-role/{id}','RoleController@update')->name('role.edit')->middleware('auth');
-    Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete')->middleware('auth');
+    // Route::get('role','RoleController@create')->name('role-form')->middleware('auth');
+    // Route::post('role','RoleController@store')->name('role-store')->middleware('auth');    
+    // Route::get('role-liste','RoleController@index')->name('role-index')->middleware('auth');
+    // Route::get('show-role/{id}','RoleController@show')->name('role-show')->middleware('auth');    
+    // Route::get('edit-role-form/{id}','RoleController@edit')->name('role.edit.form')->middleware('auth');
+    // Route::post('edit-role/{id}','RoleController@update')->name('role.edit')->middleware('auth');
+    // Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete')->middleware('auth');
 
 });
 

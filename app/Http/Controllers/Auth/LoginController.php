@@ -50,4 +50,10 @@ class LoginController extends Controller
         }
 
     }
+
+    function logout()
+    {
+        $this->guard()->logout();
+
+    }
 }

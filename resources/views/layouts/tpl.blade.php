@@ -206,6 +206,11 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ url('admin/list-offres-emplois') }}" class="nav-link">
+              Tableau de bord
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('admin/list-offres-emplois') }}" class="nav-link">
               Offres d'emplois
             </a>
           </li>
@@ -232,6 +237,11 @@
           <li class="nav-item">
             <a href="{{ url('admin/list-users') }}" class="nav-link">
               Utilisateurs
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('admin/logout-user') }}" class="nav-link">
+              Deconnexion
             </a>
           </li>
         </ul>
