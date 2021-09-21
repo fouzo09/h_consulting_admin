@@ -33,68 +33,70 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
      * Service routes
      */
 
-    Route::get('list-services', 'ServiceController@getIndex')->name('list.services');
-    Route::get('add-service', 'ServiceController@getAdd')->name('add.service');
-    Route::post('add-service', 'ServiceController@postAdd')->name('add.service');
+    Route::get('list-services', 'ServiceController@getIndex')->name('list.services')->middleware('auth');
+    Route::get('add-service', 'ServiceController@getAdd')->name('add.service')->middleware('auth');
+    Route::post('add-service', 'ServiceController@postAdd')->name('add.service')->middleware('auth');
 
     /**
      * Actualite routes
      */
 
-    Route::get('list-actualites', 'ActualiteController@getIndex')->name('list.actualites');
-    Route::get('add-actualite', 'ActualiteController@getAdd')->name('add.actualite');
-    Route::post('add-actualite', 'ActualiteController@postAdd')->name('add.actualite');
+    Route::get('list-actualites', 'ActualiteController@getIndex')->name('list.actualites')->middleware('auth');
+    Route::get('add-actualite', 'ActualiteController@getAdd')->name('add.actualite')->middleware('auth');
+    Route::post('add-actualite', 'ActualiteController@postAdd')->name('add.actualite')->middleware('auth');
 
     /**
      * Formations routes
      */
 
-    Route::get('list-formations', 'FormationController@getIndex')->name('list.formations');
-    Route::get('add-formation', 'FormationController@getAdd')->name('add.formation');
-    Route::post('add-formation', 'FormationController@postAdd')->name('add.formation');
+    Route::get('list-formations', 'FormationController@getIndex')->name('list.formations')->middleware('auth');
+    Route::get('add-formation', 'FormationController@getAdd')->name('add.formation')->middleware('auth');
+    Route::post('add-formation', 'FormationController@postAdd')->name('add.formation')->middleware('auth');
 
     /**
      * Entreprise routes
      */
 
-    Route::get('list-entreprises', 'EntrepriseController@getIndex')->name('list.entreprises');
-    Route::get('add-entreprise', 'EntrepriseController@getAdd')->name('add.entreprise');
-    Route::post('add-entreprise', 'EntrepriseController@postAdd')->name('add.entreprise');
+    Route::get('list-entreprises', 'EntrepriseController@getIndex')->name('list.entreprises')->middleware('auth');
+    Route::get('add-entreprise', 'EntrepriseController@getAdd')->name('add.entreprise')->middleware('auth');
+    Route::post('add-entreprise', 'EntrepriseController@postAdd')->name('add.entreprise')->middleware('auth');
 
     /**
      * Offres d'emplois routes
      */
 
-    Route::get('list-offres-emplois', 'EmploiController@getIndex')->name('list.offres-emplois');
-    Route::get('add-offre-emploi', 'EmploiController@getAdd')->name('add.offre-emploi');
-    Route::post('add-offre-emploi', 'EmploiController@postAdd')->name('add.offre-emploi');
+    Route::get('list-offres-emplois', 'EmploiController@getIndex')->name('list.offres-emplois')->middleware('auth');
+    Route::get('add-offre-emploi', 'EmploiController@getAdd')->name('add.offre-emploi')->middleware('auth');
+    Route::post('add-offre-emploi', 'EmploiController@postAdd')->name('add.offre-emploi')->middleware('auth');
 
     /**
      * Utilisateurs routes
      */
+    Route::get('list-users','UserController@index')->name('list.users')->middleware('auth');
+    Route::get('add-user','UserController@create')->name('add.user')->middleware('auth');
+    Route::post('add-user','UserController@store')->name('add.user')->middleware('auth');
 
-    Route::get('show-user/{id}','RoleController@show')->name('user.show');
-    Route::get('user-disable/{id}','UserController@disable')->name('disable');    
-    Route::post('add-user','UserController@store')->name('user.add');
-    Route::get('edit-user-form/{id}','UserController@edit')->name('user.edit.form');
-    Route::post('edit-user/{id}','UserController@update')->name('user.edit');
-    Route::get('delete-user/{id}','UserController@destroy')->name('user.delete');
-    Route::get('logout-user','UserController@logout')->name('logout.user');
-    Route::get('new-password','UserController@updatePasswordForm')->name('new.password.form');
-    Route::post('new-password','UserController@updatePassword')->name('new.password');    
-    Route::get('list-users','UserController@index')->name('users-list');
+    // Route::get('show-user/{id}','RoleController@show')->name('user.show')->middleware('auth');
+    // Route::get('user-disable/{id}','UserController@disable')->name('disable')->middleware('auth');
+    // Route::get('edit-user-form/{id}','UserController@edit')->name('user.edit.form')->middleware('auth');
+    // Route::post('edit-user/{id}','UserController@update')->name('user.edit')->middleware('auth');
+    // Route::get('delete-user/{id}','UserController@destroy')->name('user.delete')->middleware('auth');
+    // Route::get('logout-user','UserController@logout')->name('logout.user')->middleware('auth');
+    // Route::get('new-password','UserController@updatePasswordForm')->name('new.password.form')->middleware('auth');
+    // Route::post('new-password','UserController@updatePassword')->name('new.password')->middleware('auth');    
+  
 
     /**
      * Roles routes
      */
     
-    Route::get('role','RoleController@create')->name('role-form');
-    Route::post('role','RoleController@store')->name('role-store');    
-    Route::get('role-liste','RoleController@index')->name('role-index');
-    Route::get('show-role/{id}','RoleController@show')->name('role-show');    
-    Route::get('edit-role-form/{id}','RoleController@edit')->name('role.edit.form');
-    Route::post('edit-role/{id}','RoleController@update')->name('role.edit');
-    Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete');
+    Route::get('role','RoleController@create')->name('role-form')->middleware('auth');
+    Route::post('role','RoleController@store')->name('role-store')->middleware('auth');    
+    Route::get('role-liste','RoleController@index')->name('role-index')->middleware('auth');
+    Route::get('show-role/{id}','RoleController@show')->name('role-show')->middleware('auth');    
+    Route::get('edit-role-form/{id}','RoleController@edit')->name('role.edit.form')->middleware('auth');
+    Route::post('edit-role/{id}','RoleController@update')->name('role.edit')->middleware('auth');
+    Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete')->middleware('auth');
 
 });
 
