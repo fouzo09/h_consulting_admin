@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+  
   <style>
       .icon-remove{
         color: red;
@@ -228,6 +229,11 @@
               Entreprises
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('admin/list-users') }}" class="nav-link">
+              Utilisateurs
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -257,12 +263,23 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{ asset('asset/dist/jsplugins/jquery/jquery.min.js') }}"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('asset/dist/jsplugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('asset/dist/jsdist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('asset/dist/jsdist/js/demo.js') }}"></script>
+
+<!-- Multiselec -->
+<script src="https://cdn.jsdelivr.net/npm/@dashboardcode/bsmultiselect@0.6.8/dist/js/BsMultiSelect.js"></script> 
+<script>
+  $(function(){
+    $("#secteurs").bsMultiSelect();
+  });
+</script>
 </body>
 </html>

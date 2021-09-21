@@ -30,6 +30,47 @@
                     @endif
                 </div>
                 <div class="form-group">
+                    <label for="#">Domaines</label>
+                    
+                      <select name="domaines" id="domaines" class="form-control">
+                          <option selected disabled>Selectionnez un domaine</option>
+                          @foreach($domaines as $domaine)
+                            <option value="{{ $domaine->id }}">{{ $domaine->nom }}</option>
+                          @endforeach
+                      </select>
+                   
+                    @if($errors->has('domaines'))
+                        <div class="error">{{ $errors->first('domaines') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="#">Type de contrats</label>
+                      <select name="types" id="types"  class="form-control">
+                          <option selected disabled>Selectionnez le type de l'offre</option>
+                          @foreach($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->nom }}</option>
+                          @endforeach
+                      </select>
+                    
+                    @if($errors->has('types'))
+                        <div class="error">{{ $errors->first('types') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="#">Secteurs</label>
+                    
+                      <select name="secteurs" id="secteurs" multiple="multiple" class="form-control">
+                      <!-- <option selected disabled>Selectionnez les secteurs d'activités</option> -->
+                          @foreach($secteurs as $secteur)
+                            <option value="{{ $secteur->id }}">{{ $secteur->nom }}</option>
+                          @endforeach
+                      </select>
+                    
+                    @if($errors->has('secteurs'))
+                        <div class="error">{{ $errors->first('secteurs') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
                     <label for="#">Contenu</label>
                     <textarea class="form-control" name="contenu" id="" cols="30" rows="10"></textarea>
                     @if($errors->has('contenu'))

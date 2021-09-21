@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +13,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->check('view_all_users');
+        // $this->check('view_all_users');
         $users = User::all();
         $title = 'liste des utilisateurs';
         return view('users.liste',compact('users'));
@@ -57,7 +57,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $this->check('show_users');
+        // $this->check('show_users');
 
         $user = User::findOrFail($id);
         return view('users.profile',compact('user'));
@@ -71,7 +71,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {    
-        $this->check('edit_users');
+        // $this->check('edit_users');
          $user = User::findOrFail($id);
          return view('users.edit',compact('user'));
     }
@@ -85,14 +85,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->check('edit_users');
+        // $this->check('edit_users');
         $rules = [
             'firstName'   => 'required|min:2|string',
             'lastName' => 'required|min:2|string',
             'phone' => 'required|min:9|string',
             'role_id' => 'required',
             'email'  => 'required|email|max:255'  
-      ];
+        ];
       
             $request->validate($rules);
 
@@ -119,7 +119,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $this->check('delete_user');
+        // $this->check('delete_user');
         $user = User::findOrFail($id);
 
         if ($user->delete()) {
@@ -132,7 +132,7 @@ class UserController extends Controller
     public function disable($id)
     {
        // Helper::check('disable_user');
-       $this->check('disable_users');
+    //    $this->check('disable_users');
        $user = User::find($id);
         $user->status = !$user->status;
         $user->save();
