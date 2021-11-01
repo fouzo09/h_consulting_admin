@@ -22,9 +22,7 @@ Route::get('test',function(){
     return view('auth.passwords.reset');
 });
 
-Route::get('/', function () {
-    return view('layouts.tpl');
-});
+Route::get('/', 'HomeController@index')->name('/');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
