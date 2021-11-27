@@ -18,12 +18,17 @@ use App\User;
 //     return view('newRegister');
 // });
 
-Route::get('test',function(){
-    return view('auth.passwords.reset');
-});
+// Route::get('test',function(){
+//     return view('auth.passwords.reset');
+// });
 
 Route::get('/', 'HomeController@index')->name('/');
 Route::get('liste-offres-emplois', 'OffreEmploiController@getListeOffreEmploi')->name('liste-offres-emplois');
+
+Route::get('nous-connaitre', 'HeuristicController@nousConaitre')->name('nous-connaitre');
+Route::get('nos-services', 'HeuristicController@nosService')->name('nos-services');
+Route::get('notre-equipe', 'HeuristicController@notreEquipe')->name('notre-equipe');
+Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
