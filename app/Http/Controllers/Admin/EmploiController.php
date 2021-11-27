@@ -8,7 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Emploi;
 use App\Models\Domaine;
 use App\Models\Type;
+use App\Models\Ville;
+use App\Models\Grade;
 use App\Models\Secteur;
+use App\Models\Entreprise;
 
 class EmploiController extends Controller
 {
@@ -19,10 +22,14 @@ class EmploiController extends Controller
 
     public function getAdd(){
 
-        $secteurs = Secteur::all();
-        $domaines = Domaine::all();
-        $types    = Type::all();
-        return view('emplois.add', compact('domaines', 'secteurs', 'types'));
+        $secteurs    = Secteur::all();
+        $domaines    = Domaine::all();
+        $types       = Type::all();
+        $villes      = Ville::all();
+        $entreprises = Entreprise::all();
+        $grades      = Grade::all();
+        
+        return view('emplois.add', compact('domaines', 'secteurs', 'types', 'entreprises', 'villes', 'grades'));
     }
 
     public function postAdd(){
@@ -48,10 +55,14 @@ class EmploiController extends Controller
 
         $emploi->image    = $filename;
         $emploi->titre    = request()->titre;
-        $emploi->domaine_id = request()->domaines;
-        $emploi->type_id    = request()->types;
-        $emploi->secteurs   = json_encode(request()->secteurs);
-        $emploi->contenu  = request()->contenu;
+        $emploi->grade_id = request()->grades;
+        $emploi->experience    = request()->experience;
+        $emploi->domaine_id    = json_encode(request()->domaines);
+        $emploi->ville_id      = json_encode(request()->villes);
+        $emploi->entreprise_id = request()->entreprises;
+        $emploi->type_id       = request()->types;
+        $emploi->secteurs      = json_encode(request()->secteurs);
+        $emploi->contenu       = request()->contenu;
         $emploi->date_publication = request()->date_publication;
         $emploi->user_id  = 1;
 

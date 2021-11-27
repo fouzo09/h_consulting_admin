@@ -30,22 +30,36 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="#">Domaines</label>
+                    <label for="#">Entreprises</label>
                     
-                      <select name="domaines" id="domaines" class="form-control">
-                          <option selected disabled>Selectionnez un domaine</option>
-                          @foreach($domaines as $domaine)
-                            <option value="{{ $domaine->id }}">{{ $domaine->nom }}</option>
+                      <select name="entreprises" id="entreprises" class="form-control">
+                          <option selected disabled>Selectionnez une entreprise</option>
+                          @foreach($entreprises as $entreprise)
+                            <option value="{{ $entreprise->id }}">{{ $entreprise->raison_sociale }}</option>
                           @endforeach
                       </select>
                    
-                    @if($errors->has('domaines'))
-                        <div class="error">{{ $errors->first('domaines') }}</div>
+                    @if($errors->has('entreprises'))
+                        <div class="error">{{ $errors->first('entreprises') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="#">Grades</label>
+                    
+                      <select name="grades" id="grades" class="form-control">
+                          <option selected disabled>Selectionnez une grade</option>
+                          @foreach($grades as $grade)
+                            <option value="{{ $grade->id }}">{{ $grade->nom }}</option>
+                          @endforeach
+                      </select>
+                   
+                    @if($errors->has('entreprises'))
+                        <div class="error">{{ $errors->first('entreprises') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
                     <label for="#">Type de contrats</label>
-                      <select name="types" id="types"  class="form-control">
+                      <select name="types" id="types"   class="form-control">
                           <option selected disabled>Selectionnez le type de l'offre</option>
                           @foreach($types as $type)
                             <option value="{{ $type->id }}">{{ $type->nom }}</option>
@@ -57,10 +71,23 @@
                     @endif
                 </div>
                 <div class="form-group">
+                    <label for="#">Domaines</label>
+                    
+                      <select name="domaines[]" id="domaines"  multiple="multiple" class="form-control">
+                          @foreach($domaines as $domaine)
+                            <option value="{{ $domaine->id }}">{{ $domaine->nom }}</option>
+                          @endforeach
+                      </select>
+                   
+                    @if($errors->has('domaines'))
+                        <div class="error">{{ $errors->first('domaines') }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group">
                     <label for="#">Secteurs</label>
                     
-                      <select name="secteurs" id="secteurs" multiple="multiple" class="form-control">
-                      <!-- <option selected disabled>Selectionnez les secteurs d'activités</option> -->
+                      <select name="secteurs[]" id="secteurs" multiple="multiple" class="form-control">
                           @foreach($secteurs as $secteur)
                             <option value="{{ $secteur->id }}">{{ $secteur->nom }}</option>
                           @endforeach
@@ -68,6 +95,19 @@
                     
                     @if($errors->has('secteurs'))
                         <div class="error">{{ $errors->first('secteurs') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="#">Villes</label>
+                    
+                      <select name="villes[]" id="villes" multiple="multiple" class="form-control">
+                          @foreach($villes as $ville)
+                            <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
+                          @endforeach
+                      </select>
+                   
+                    @if($errors->has('villes'))
+                        <div class="error">{{ $errors->first('villes') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
@@ -82,6 +122,13 @@
                     <input class="form-control" type="date" name="date_publication" id="date_publication">
                     @if($errors->has('date_publication'))
                         <div class="error">{{ $errors->first('date_publication') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="#">Nombre minimum d'année d'experience</label>
+                    <input class="form-control" type="number" min="1" value="1" name="experience" id="experience">
+                    @if($errors->has('experience'))
+                        <div class="error">{{ $errors->first('experience') }}</div>
                     @endif
                 </div>
                 <div class="form-group">

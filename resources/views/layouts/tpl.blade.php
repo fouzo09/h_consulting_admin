@@ -289,6 +289,8 @@ integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNm
 <script>
   $(function(){
     $("#secteurs").bsMultiSelect();
+    $("#domaines").bsMultiSelect();
+    $("#villes").bsMultiSelect();
   });
 </script>
 </body>

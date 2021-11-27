@@ -8,7 +8,8 @@ use App\Models\Emploi;
 class OffreEmploiController extends Controller
 {
     public function getListeOffreEmploi(){
-        $offresEmplois = Emploi::all();
+        $offresEmplois = Emploi::orderBy('id', 'DESC')->get();
+        
         return view("front.emploi.liste", compact('offresEmplois'));
     }
 }
