@@ -42,7 +42,7 @@ class EmploiController extends Controller
         $this->validate(request(), $rules, $customMessages);
 
         $filename = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('assets/img/entreprise'), $filename);
+        request()->image->move(public_path('assets/img/offres-emplois'), $filename);
 
         $emploi = new Emploi();
 

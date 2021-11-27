@@ -23,6 +23,7 @@ Route::get('test',function(){
 });
 
 Route::get('/', 'HomeController@index')->name('/');
+Route::get('liste-offres-emplois', 'OffreEmploiController@getListeOffreEmploi')->name('liste-offres-emplois');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {

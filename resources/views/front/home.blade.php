@@ -1,5 +1,6 @@
 @extends('layouts.tpl_front')
 @section('content')
+        @include("layouts.header_home")
         <!-- Feature Section Start -->
         <div class="feature-section section bg-image-proparty bg_image--2 pt-40 pb-10">
             <div class="container">
