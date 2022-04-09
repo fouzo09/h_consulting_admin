@@ -33,6 +33,8 @@ Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
+    Route::get('/', 'ServiceController@getIndex')->middleware('auth');
+
     /**
      * Service routes
      */
