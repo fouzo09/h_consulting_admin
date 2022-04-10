@@ -21,7 +21,7 @@
       <div class="card">
         <div class="card-body">
           @if($entreprises->count() > 0)
-          
+
             <table class="table table-striped">
                 <thead>
                     <th>#</th>
@@ -35,12 +35,16 @@
                     @foreach($entreprises as $entreprise)
                         <tr>
                             <td>{{ $index++ }}</td>
-                            <td><img src="{{ asset('assets/img/actualite/'.$entreprise->image) }}" width="100px" height="100px" alt=""></td>
+                            <td><img src="{{ asset('assets/img/entreprise/'.$entreprise->logo) }}" width="100px" height="100px" alt=""></td>
                             <td>{{ $entreprise->raison_sociale }}</td>
                             <td>{{ $entreprise->adresse }}</td>
                             <td>
-                                <i class="fa fa-trash icon-remove"></i>
-                                <i class="fa fa-edit icon-edit"></i>
+                                <a href="{{route('delete.entreprise',$entreprise)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-trash icon-remove"></i>
+                                </a>
+                                <a href="{{route('edit.entreprise.form',$entreprise)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-edit icon-edit"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

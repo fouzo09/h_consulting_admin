@@ -32,7 +32,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>  
+                <tbody>
                     <?php $i = 0 ; ?>
                     @foreach ($users as $user)
                         <tr role="row" class="odd">
@@ -42,8 +42,12 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->nom }}</td>
                             <td>
-                                <i class="fa fa-trash icon-remove"></i>
-                                <i class="fa fa-edit icon-edit"></i>
+                                <a href="{{route('user.delete',$user)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-trash icon-remove"></i>
+                                </a>
+                                <a href="{{route('user.edit.form',$user)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-edit icon-edit"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

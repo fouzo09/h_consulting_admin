@@ -21,7 +21,7 @@
       <div class="card">
         <div class="card-body">
           @if($formations->count() > 0)
-          
+
             <table class="table table-striped">
                 <thead>
                     <th>#</th>
@@ -41,8 +41,12 @@
                             <td>{{ str_limit($formation->contenu, 100) }}</td>
                             <td>{{ $formation->formateur }}</td>
                             <td>
-                                <i class="fa fa-trash icon-remove"></i>
-                                <i class="fa fa-edit icon-edit"></i>
+                                <a href="{{route('delete.formation',$formation)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-trash icon-remove"></i>
+                                </a>
+                                <a href="{{route('edit.formation.form',$formation)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-edit icon-edit"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

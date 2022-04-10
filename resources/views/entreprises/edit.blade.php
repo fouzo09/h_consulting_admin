@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-10">
-            <h1>Ajout d'une entreprise</h1>
+            <h1>Modifier les information de l'entreprise</h1>
           </div>
           <div class="col-sm-2 pull-right">
             <a href="{{ route('list.entreprises') }}" class="btn btn-default btn-md"><strong>Afficher les entreprises</strong></a>
@@ -14,39 +14,38 @@
       </div><!-- /.container-fluid -->
     </section>
     <hr>
-
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->
       <div class="card">
         <div class="card-body">
-            <form action="{{ route('add.entreprise') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('edit.entreprise',$entreprise->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="#">Raison sociale</label>
-                    <input class="form-control" type="text" name="raison sociale" id="raison sociale">
-                    @if($errors->has('raison sociale'))
-                        <div class="error">{{ $errors->first('raison sociale') }}</div>
+                    <input class="form-control" type="text" name="raison_sociale" id="raison_sociale" value="{{$entreprise->raison_sociale}}">
+                    @if($errors->has('raison_sociale'))
+                        <div class="error text-danger">{{ $errors->first('raison_sociale') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
                     <label for="#">Adresse</label>
-                    <textarea class="form-control" name="adresse" id="" cols="10" rows="10"></textarea>
+                    <textarea class="form-control" name="adresse" id="" cols="10" rows="10">{{$entreprise->adresse}}</textarea>
                     @if($errors->has('adresse'))
-                        <div class="error">{{ $errors->first('adresse') }}</div>
+                        <div class="error text-danger">{{ $errors->first('adresse') }}</div>
                     @endif
                 </div>
 
                 <div class="form-group">
                     <label for="#">Logo</label>
-                    <input class="form-control" type="file" name="logo" id="logo">
+                    <input class="form-control" type="file" name="logo" id="logo" value="{{$entreprise->logo}}">
                     @if($errors->has('logo'))
-                        <div class="error">{{ $errors->first('logo') }}</div>
+                        <div class="error text-danger">{{ $errors->first('logo')}}</div>
                     @endif
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enregistrer</button>
+                    <button type="submit" class="btn btn-dark">Modifier</button>
                 </div>
             </form>
         </div>

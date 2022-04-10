@@ -21,7 +21,7 @@
       <div class="card">
         <div class="card-body">
           @if($emplois->count() > 0)
-          
+
             <table class="table table-striped">
                 <thead>
                     <th>#</th>
@@ -42,8 +42,13 @@
                                 <td>{{ str_limit($emploi->contenu, 100) }}</td>
                                 <td>{{ $emploi->date_publication }}</td>
                                 <td>
-                                    <i class="fa fa-trash icon-remove"></i>
-                                    <i class="fa fa-edit icon-edit"></i>
+                                    <a href="{{route('delete.emploi',$emploi)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-trash icon-remove"></i>
+                                    </a>
+                                    <a href="{{route('edit.emploi.form',$emploi)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-edit icon-edit"></i>
+                                    </a>
+                                    
                                 </td>
                             </tr>
                         @endforeach
