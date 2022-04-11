@@ -48,7 +48,10 @@
                                     <a href="{{route('edit.emploi.form',$emploi)}}" class="btn btn-info btn-alt btn-xs">
                                         <i class="fa fa-edit icon-edit"></i>
                                     </a>
-                                    
+                                    <a href="{{route('retrieve.emploi',$emploi)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-eye icon-eye"></i>
+                                    </a>
+
                                 </td>
                             </tr>
                         @endforeach

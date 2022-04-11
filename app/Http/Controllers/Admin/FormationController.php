@@ -36,7 +36,7 @@ class FormationController extends Controller
         $this->validate(request(), $rules, $customMessages);
 
         $filename = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('assets/img/actualite'), $filename);
+        request()->image->move(public_path('assets/img/formation'), $filename);
 
         $formation = new Formation();
 
@@ -51,6 +51,16 @@ class FormationController extends Controller
        }else{
          return back()->with('error','Erreur,lors de l\'ajout de la formation');
        }
+    }
+
+    public function RetrieveFormation($formationID)
+    {
+        $formation=Formation::find($formationID);
+        if(is_null($formation)){
+            return back()->with('error','Aucune formation trouvée');
+        }else{
+            return view('formations.single')->withFormation($formation);
+        }
     }
 
     public function EditFormationForm($formationID)
@@ -83,7 +93,7 @@ class FormationController extends Controller
             $this->validate(request(), $rules, $customMessages);
 
             $filename = time().'.'.request()->image->getClientOriginalExtension();
-            request()->image->move(public_path('assets/img/actualite'), $filename);
+            request()->image->move(public_path('assets/img/formation'), $filename);
 
             $formation->image    = $filename;
             $formation->titre    = request()->titre;

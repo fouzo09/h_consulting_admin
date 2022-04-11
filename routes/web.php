@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('add-service', 'ServiceController@getAdd')->name('add.service')->middleware('auth');
     Route::post('add-service', 'ServiceController@postAdd')->name('add.service')->middleware('auth');
 
+    Route::get('retrieve-service/{serviceID}', 'ServiceController@RetrieveService')->name('retrieve.service')->middleware('auth');
     Route::get('delete-service/{serviceID}', 'ServiceController@DeleteService')->name('delete.service')->middleware('auth');
     Route::get('edit-service/{serviceID}', 'ServiceController@EditServiceForm')->name('edit.service.form')->middleware('auth');
     Route::post('edit-service/{serviceID}', 'ServiceController@EditService')->name('edit.service')->middleware('auth');
@@ -56,6 +57,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('add-actualite', 'ActualiteController@getAdd')->name('add.actualite')->middleware('auth');
     Route::post('add-actualite', 'ActualiteController@postAdd')->name('add.actualite')->middleware('auth');
 
+    Route::get('retrieve-actualite/{actualiteID}', 'ActualiteController@RetrieveActualite')->name('retrieve.actualite')->middleware('auth');
     Route::get('delete-actualite/{actualiteID}', 'ActualiteController@DeleteActualite')->name('delete.actualite')->middleware('auth');
     Route::get('edit-actualite/{actualiteID}', 'ActualiteController@EditActualiteForm')->name('edit.actualite.form')->middleware('auth');
     Route::post('edit-actualite/{actualiteID}', 'ActualiteController@EditActualite')->name('edit.actualite')->middleware('auth');
@@ -69,6 +71,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('add-formation', 'FormationController@getAdd')->name('add.formation')->middleware('auth');
     Route::post('add-formation', 'FormationController@postAdd')->name('add.formation')->middleware('auth');
 
+    Route::get('retrieve-formation/{formationID}', 'FormationController@RetrieveFormation')->name('retrieve.formation')->middleware('auth');
     Route::get('delete-formation/{formationID}', 'FormationController@DeleteFormation')->name('delete.formation')->middleware('auth');
     Route::get('edit-formation/{formationID}', 'FormationController@EditFormationForm')->name('edit.formation.form')->middleware('auth');
     Route::post('edit-formation/{formationID}', 'FormationController@EditFormation')->name('edit.formation')->middleware('auth');
@@ -81,6 +84,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('add-entreprise', 'EntrepriseController@getAdd')->name('add.entreprise')->middleware('auth');
     Route::post('add-entreprise', 'EntrepriseController@postAdd')->name('add.entreprise')->middleware('auth');
 
+    Route::get('retrieve-entreprise/{entrepriseID}', 'EntrepriseController@RetrieveEntreprise')->name('retrieve.entreprise')->middleware('auth');
     Route::get('delete-entreprise/{entrepriseID}', 'EntrepriseController@DeleteEntreprise')->name('delete.entreprise')->middleware('auth');
     Route::get('edit-entreprise/{entrepriseID}', 'EntrepriseController@EditEntrepriseForm')->name('edit.entreprise.form')->middleware('auth');
     Route::post('edit-entreprise/{entrepriseID}', 'EntrepriseController@EditEntreprise')->name('edit.entreprise')->middleware('auth');
@@ -93,6 +97,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('add-offre-emploi', 'EmploiController@getAdd')->name('add.offre-emploi')->middleware('auth');
     Route::post('add-offre-emploi', 'EmploiController@postAdd')->name('add.offre-emploi')->middleware('auth');
 
+    Route::get('retrieve-emploi/{emploi_ID}', 'EmploiController@RetrieveEmploi')->name('retrieve.emploi')->middleware('auth');
     Route::get('delete-offre-emploi/{emploi_ID}', 'EmploiController@DeleteEmploi')->name('delete.emploi')->middleware('auth');
     Route::get('edit-offre-emploi/{emploi_ID}', 'EmploiController@EditEmploiForm')->name('edit.emploi.form')->middleware('auth');
     Route::post('edit-offre-emploi/{emploi_ID}', 'EmploiController@EditEmploi')->name('edit.emploi')->middleware('auth');

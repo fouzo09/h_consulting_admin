@@ -54,6 +54,16 @@ class ActualiteController extends Controller
 
     }
 
+    public function RetrieveActualite($actualiteID)
+    {
+        $actualite = Actualite::find($actualiteID);
+        if(is_null($actualite)){
+            return back()->with('error','Aucun actualite trouvée');
+        }else{
+            return view('actualites.single')->withActualite($actualite);
+        }
+    }
+
     public function EditActualiteForm($actualiteID)
     {
         $actualite = Actualite::find($actualiteID);

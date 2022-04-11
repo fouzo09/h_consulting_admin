@@ -48,6 +48,9 @@
                                     <a href="{{route('edit.actualite.form',$actualite)}}" class="btn btn-info btn-alt btn-xs">
                                         <i class="fa fa-edit icon-edit"></i>
                                     </a>
+                                    <a href="{{route('retrieve.actualite',$actualite)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-eye icon-eye"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

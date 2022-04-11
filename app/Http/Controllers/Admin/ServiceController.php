@@ -49,6 +49,16 @@ class ServiceController extends Controller
 
     }
 
+    public function RetrieveService($serviceID)
+    {
+        $service=Service::find($serviceID);
+        if(is_null($service)){
+            return back()->with('error','Aucun service trouvé');
+        }else{
+            return view('services.single')->withService($service);
+        }
+    }
+
     public function EditServiceForm($serviceID)
     {
         $service=Service::find($serviceID);

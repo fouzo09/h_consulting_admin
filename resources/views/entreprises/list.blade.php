@@ -45,6 +45,9 @@
                                 <a href="{{route('edit.entreprise.form',$entreprise)}}" class="btn btn-info btn-alt btn-xs">
                                     <i class="fa fa-edit icon-edit"></i>
                                 </a>
+                                <a href="{{route('retrieve.entreprise',$entreprise)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-eye icon-eye"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

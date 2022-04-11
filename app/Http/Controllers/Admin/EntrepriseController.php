@@ -50,6 +50,16 @@ class EntrepriseController extends Controller
 
     }
 
+    public function RetrieveEntreprise($entrepriseID)
+    {
+        $entreprise=Entreprise::find($entrepriseID);
+        if(is_null($entreprise)){
+            return back()->with('error','Aucune entreprise trouvée');
+        }else{
+            return view('entreprises.single')->withEntreprise($entreprise);
+        }
+    }
+
 
     public function EditEntrepriseForm($entrepriseID)
     {

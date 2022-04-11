@@ -74,6 +74,24 @@ class EmploiController extends Controller
 
     }
 
+    public function RetrieveEmploi($emploi_ID)
+    {
+        $emploi=Emploi::find($emploi_ID);
+        if(is_null($emploi)){
+            return back()->with('error','Aucun emploi trouvée');
+        }else{
+
+            $secteurs    = Secteur::all();
+            $domaines    = Domaine::all();
+            $types       = Type::all();
+            $villes      = Ville::all();
+            $entreprises = Entreprise::all();
+            $grades      = Grade::all();
+
+            return view('emplois.single',compact('domaines', 'secteurs', 'types', 'entreprises', 'villes', 'grades','emploi'));
+        }
+    }
+
     public function EditEmploiForm($emploi_ID)
     {
         $emploi=Emploi::find($emploi_ID);
