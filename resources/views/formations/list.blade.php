@@ -21,7 +21,7 @@
       <div class="card">
         <div class="card-body">
           @if($formations->count() > 0)
-          
+
             <table class="table table-striped">
                 <thead>
                     <th>#</th>
@@ -36,13 +36,20 @@
                     @foreach($formations as $formation)
                         <tr>
                             <td>{{ $index++ }}</td>
-                            <td><img src="{{ asset('assets/img/actualite/'.$formation->image) }}" width="100px" height="100px" alt=""></td>
+                            <td><img src="{{ asset('assets/img/formation/'.$formation->image) }}" width="100px" height="100px" alt=""></td>
                             <td>{{ $formation->titre }}</td>
                             <td>{{ str_limit($formation->contenu, 100) }}</td>
                             <td>{{ $formation->formateur }}</td>
                             <td>
-                                <i class="fa fa-trash icon-remove"></i>
-                                <i class="fa fa-edit icon-edit"></i>
+                                <a href="{{route('delete.formation',$formation)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-trash icon-remove"></i>
+                                </a>
+                                <a href="{{route('edit.formation.form',$formation)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-edit icon-edit"></i>
+                                </a>
+                                <a href="{{route('retrieve.formation',$formation)}}" class="btn btn-info btn-alt btn-xs">
+                                    <i class="fa fa-eye icon-eye"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

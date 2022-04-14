@@ -39,8 +39,16 @@
                                   <td>{{ $service->libelle }}</td>
                                   <td>{{ str_limit($service->description, 100) }}</td>
                                   <td>
-                                      <i class="fa fa-trash icon-remove"></i>
-                                      <i class="fa fa-edit icon-edit"></i>
+                                    <a href="{{route('delete.service',$service)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-trash icon-remove"></i>
+                                    </a>
+                                    <a href="{{route('edit.service.form',$service)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-edit icon-edit"></i>
+                                    </a>
+                                    <a href="{{route('retrieve.service',$service)}}" class="btn btn-info btn-alt btn-xs">
+                                        <i class="fa fa-eye icon-eye"></i>
+                                    </a>
+
                                   </td>
                               </tr>
                           @endforeach
