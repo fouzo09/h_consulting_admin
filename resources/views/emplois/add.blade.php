@@ -44,7 +44,7 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="#">Grades</label>
+                    <label for="#">Niveaux de formation</label>
 
                       <select name="grades" id="grades" class="form-control">
                           <option selected disabled>Selectionnez une grade</option>
