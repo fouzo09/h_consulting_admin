@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActualitesTable extends Migration
+class CreateConfigurationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateActualitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actualites', function (Blueprint $table) {
+        Schema::create('configurations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->string('titre', 255);
-            $table->text('contenu');
-            $table->date('date_pulication');
-            $table->string('image', 255);
+            $table->string('nom_plateforme');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('adresse');
+            $table->string('logo');
+            $table->integer('activation_notification');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateActualitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actualites');
+        Schema::dropIfExists('configurations');
     }
 }

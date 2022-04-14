@@ -76,6 +76,12 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::post('add-offre-emploi', 'EmploiController@postAdd')->name('add.offre-emploi')->middleware('auth');
 
     /**
+     * Configurations
+     */
+    Route::get('config', 'ConfigController@getIndex')->name('config')->middleware('auth');
+    Route::post('config', 'ConfigController@postConfig')->name('config')->middleware('auth');
+
+    /**
      * Utilisateurs routes
      */
     Route::get('list-users','UserController@index')->name('list.users')->middleware('auth');

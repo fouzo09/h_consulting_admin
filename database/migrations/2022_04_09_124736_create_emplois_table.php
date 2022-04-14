@@ -26,6 +26,7 @@ class CreateEmploisTable extends Migration
             $table->text('contenu');
             $table->date('date_pulication');
             $table->string('image', 255);
+            $table->integer('experience');
             $table->timestamps();
         });
     }

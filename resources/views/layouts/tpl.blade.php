@@ -235,6 +235,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ url('admin/config') }}" class="nav-link">
+              Configurations
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ url('admin/list-users') }}" class="nav-link">
               Utilisateurs
             </a>
