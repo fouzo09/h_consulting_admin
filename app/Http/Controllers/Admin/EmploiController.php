@@ -61,7 +61,7 @@ class EmploiController extends Controller
         $emploi->ville_id      = json_encode(request()->villes);
         $emploi->entreprise_id = request()->entreprises;
         $emploi->type_id       = request()->types;
-        $emploi->secteurs      = json_encode(request()->secteurs);
+        $emploi->secteur_id      = json_encode(request()->secteurs);
         $emploi->contenu       = request()->contenu;
         $emploi->date_publication = request()->date_publication;
         $emploi->user_id  = 1;
@@ -141,7 +141,7 @@ class EmploiController extends Controller
             $emploi->ville_id      = json_encode(request()->villes);
             $emploi->entreprise_id = request()->entreprises;
             $emploi->type_id       = request()->types;
-            $emploi->secteurs      = json_encode(request()->secteurs);
+            $emploi->secteur_id      = json_encode(request()->secteurs);
             $emploi->contenu       = request()->contenu;
             $emploi->date_publication = request()->date_publication;
             $emploi->user_id  = 1;

@@ -33,6 +33,8 @@ Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
+    Route::get('/', 'ServiceController@getIndex')->middleware('auth');
+
     /**
      * Service routes
      */
@@ -101,6 +103,12 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('delete-offre-emploi/{emploi_ID}', 'EmploiController@DeleteEmploi')->name('delete.emploi')->middleware('auth');
     Route::get('edit-offre-emploi/{emploi_ID}', 'EmploiController@EditEmploiForm')->name('edit.emploi.form')->middleware('auth');
     Route::post('edit-offre-emploi/{emploi_ID}', 'EmploiController@EditEmploi')->name('edit.emploi')->middleware('auth');
+
+    /**
+     * Configurations
+     */
+    Route::get('config', 'ConfigController@getIndex')->name('config')->middleware('auth');
+    Route::post('config', 'ConfigController@postConfig')->name('config')->middleware('auth');
 
     /**
      * Utilisateurs routes

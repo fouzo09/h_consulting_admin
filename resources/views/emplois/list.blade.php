@@ -37,7 +37,7 @@
                         @foreach($emplois as $emploi)
                             <tr>
                                 <td>{{ $index++ }}</td>
-                                <td><img src="{{ asset('assets/img/actualite/'.$emploi->image) }}" width="100px" height="100px" alt=""></td>
+                                <td><img src="{{ asset('assets/img/offres-emplois/'.$emploi->image) }}" width="100px" height="100px" alt=""></td>
                                 <td>{{ $emploi->titre }}</td>
                                 <td>{{ str_limit($emploi->contenu, 100) }}</td>
                                 <td>{{ $emploi->date_publication }}</td>
