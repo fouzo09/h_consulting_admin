@@ -110,18 +110,6 @@
                                         </div>
                                         <!-- Single Meta Field Start -->
                                     </div>
-{{--
-                                    <div class="col-lg-12">
-                                        <!-- Single Meta Field Start -->
-                                        <div class="single-meta-field">
-                                            <div class="field-label">
-                                                <i class="lnr lnr-thumbs-up"></i>
-                                                <span>Salary </span>
-                                            </div>
-                                            <div class="field-value salary">$500 - $1,000 / month</div>
-                                        </div>
-                                        <!-- Single Meta Field Start -->
-                                    </div> --}}
 
                                     <div class="col-lg-12">
                                         <!-- Single Meta Field Start -->
