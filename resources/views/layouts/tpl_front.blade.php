@@ -19,6 +19,7 @@
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/plugins.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/home.css') }}">
     <!-- Modernizr JS -->
     <script src="{{ asset('assets/front/js/vendor/modernizr-3.10.0.min.js') }}"></script>
     <style>
@@ -47,7 +48,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-xl-4 col-lg-3 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget mb-30">
                         <h6 class="title">Contact Info</h6>
@@ -68,36 +69,18 @@
                     <!-- Footer Widget End -->
                 </div>
 
-                <div class="col-xl-2 col-lg-2 col-md-6">
+                <div class="col-xl-4 col-lg-4 col-md-6">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget mb-30">
-                        <h6 class="title">Useful Links</h6>
+                        <h6 class="title">Accès rapides</h6>
                         <div class="footer-widget-link">
                             <ul>
-                                <li><a href="#">Press Corner</a></li>
-                                <li><a href="#">Policy Privacy</a></li>
-                                <li><a href="#">Terms And Conditions</a></li>
-                                <li><a href="#">Partner</a></li>
-                                <li><a href="#">Help Center</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget End -->
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-md-6">
-                    <!-- Footer Widget Start -->
-                    <div class="footer-widget mb-30">
-                        <h6 class="title">Featured Jobs</h6>
-                        <div class="footer-widget-link">
-                            <ul>
-                                <li><a href="#">Teachers</a></li>
-                                <li><a href="#">Accounting</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">Digital Marketing</a></li>
-                                <li><a href="#">Web & Software Dev</a></li>
-                                <li><a href="#">Science & Analitycs</a></li>
+                                <li><a href="#">Acceuil</a></li>
+                                <li><a href="#">Emplois</a></li>
+                                <li><a href="#">Heuristic</a></li>
+                                <li><a href="#">Formations</a></li>
+                                <li><a href="#">Actualités</a></li>
+                                <li><a href="#">Mon compte</a></li>
                             </ul>
                         </div>
                     </div>
@@ -138,7 +121,7 @@
             <div class="row g-0 st-border pt-35 pb-35 align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright">
-                        <p>&copy;2020 <a href="https://hasthemes.com/">Jetapo</a>. All rights reserved.</p>
+                        <p>&copy;<?= date('Y') ?> <a href="#">Heuristic</a>. Tous les droits reservés.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

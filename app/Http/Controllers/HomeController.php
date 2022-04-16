@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Emploi;
 
 class HomeController extends Controller
 {
@@ -10,6 +11,8 @@ class HomeController extends Controller
   
     public function index()
     {
-        return view('front.home');
+        $offres = Emploi::get()->take(3);
+       
+        return view('front.home', compact('offres'));
     }
 }
