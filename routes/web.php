@@ -24,6 +24,8 @@ use App\User;
 
 Route::get('/', 'HomeController@index')->name('/');
 Route::get('liste-offres-emplois', 'OffreEmploiController@getListeOffreEmploi')->name('liste-offres-emplois');
+Route::get('details-offres-emplois/{emploi}', 'OffreEmploiController@getDetailsOffreEmploi')->name('details-offres-emplois');
+
 
 Route::get('nous-connaitre', 'HeuristicController@nousConaitre')->name('nous-connaitre');
 Route::get('nos-services', 'HeuristicController@nosService')->name('nos-services');

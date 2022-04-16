@@ -44,152 +44,110 @@
                                     <li>
                                         <div class="filter-name-item">
                                             <input type="checkbox" name="expericence" id="experience-cbx">
-                                            <label for="experience-cbx">> 5 years (1)</label>
+                                            <label for="experience-cbx">> 5 years </label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="filter-name-item">
                                             <input type="checkbox" name="expericence" id="experience-cbx-two">
-                                            <label for="experience-cbx-two"> &lt; 1 year (5)</label>
+                                            <label for="experience-cbx-two"> 3-5 years</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="experience-cbx-three">
-                                            <label for="experience-cbx-three">1-3 years (10)</label>
+                                            <input type="checkbox" name="expericence" id="experience-cbx-two">
+                                            <label for="experience-cbx-two"> &lt; 1-3 years</label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="experience-cbx-four">
-                                            <label for="experience-cbx-four">3-5 years (4)</label>
+                                            <input type="checkbox" name="expericence" id="experience-cbx-two">
+                                            <label for="experience-cbx-two"> 1-2 year</label>
                                         </div>
                                     </li>
+                                    <li>
+                                        <div class="filter-name-item">
+                                            <input type="checkbox" name="expericence" id="experience-cbx-two">
+                                            <label for="experience-cbx-two"> &lt; 1 year</label>
+                                        </div>
+                                    </li>
+
                                 </ul>
                             </div>
                             <div class="common-sidebar-widget sidebar-two">
-                                <h2 class="sidebar-title">Location</h2>
-                                <div class="sidebar-location-form">
-                                    <form action="#">
-                                        <div class="input-group">
-                                            <input type="text" name="search" placeholder="Enter location">
-                                            <i class="far fa-dot-circle"></i>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="sidebar-location-range mt-10">
-                                    <div class="location-range">
-                                        <label for="amount">Radius:</label>
-                                        <input type="text" id="amount" readonly>
-                                    </div>
-                                    <div id="slider-range-min"></div>
-                                </div>
+                                <h2 class="sidebar-title">Niveaux de formation</h2>
+                                <ul class="sidebar-cbx-list">
+                                    @foreach ($grades as $grade)
+                                        <li>
+                                            <div class="filter-name-item">
+                                                <input type="checkbox" name="{{$grade->id}}" id="{{$grade->nom}}-cbx">
+                                                <label for="{{$grade->nom}}-cbx">{{$grade->nom}}</label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
                             </div>
                             <div class="common-sidebar-widget sidebar-two">
-                                <h2 class="sidebar-title">salaries</h2>
-                                <div class="sidebar-salary">
-                                    <div id="salary-range" class="mb-20"></div>
-                                    <div class="salary-range-group">
-                                        <label for="salary-amount-txt">Salary range:</label>
-                                        <input type="text" id="salary-amount-txt" class="salary-amount" readonly>
-                                    </div>
-                                </div>
+                                <h2 class="sidebar-title">Domaines</h2>
+                                <ul class="sidebar-cbx-list">
+                                    @foreach ($domaines as $domaine)
+                                        <li>
+                                            <div class="filter-name-item">
+                                                <input type="checkbox" name="{{$domaine->id}}" id="{{$domaine->nom}}-cbx">
+                                                <label for="{{$domaine->nom}}-cbx">{{$domaine->nom}}</label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+                            <div class="common-sidebar-widget sidebar-two">
+                                <h2 class="sidebar-title">Secteurs</h2>
+                                <ul class="sidebar-cbx-list">
+                                    @foreach ($secteurs as $secteur)
+                                        <li>
+                                            <div class="filter-name-item">
+                                                <input type="checkbox" name="{{$secteur->id}}" id="{{$secteur->nom}}-cbx">
+                                                <label for="{{$secteur->nom}}-cbx">{{$secteur->nom}}</label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="common-sidebar-widget sidebar-two">
+                                <h2 class="sidebar-title">Villes</h2>
+                                <ul class="sidebar-cbx-list">
+                                    @foreach ($villes as $ville)
+                                        <li>
+                                            <div class="filter-name-item">
+                                                <input type="checkbox" name="{{$ville->id}}" id="{{$ville->nom}}-cbx">
+                                                <label for="{{$ville->nom}}-cbx">{{$ville->nom}}</label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
                             </div>
                             <div class="common-sidebar-widget sidebar-two">
                                 <h2 class="sidebar-title">Type</h2>
                                 <ul class="sidebar-cbx-list">
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx">
-                                            <label for="type-cbx">Contract (0)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-two">
-                                            <label for="type-cbx-two"> Freelancer (3)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-three">
-                                            <label for="type-cbx-three">Full Time (13)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-four">
-                                            <label for="type-cbx-four">Internship (1)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-five">
-                                            <label for="type-cbx-five">Part Time (2)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-six">
-                                            <label for="type-cbx-six">Remote (2)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="type-cbx-seven">
-                                            <label for="type-cbx-seven">Temporary (2)</label>
-                                        </div>
-                                    </li>
+                                    @foreach ($types as $type)
+                                        <li>
+                                            <div class="filter-name-item">
+                                                <input type="checkbox" name="{{$type->id}}" id="{{$type->nom}}-cbx">
+                                                <label for="{{$type->nom}}-cbx">{{$type->nom}}</label>
+                                            </div>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
-                            <div class="common-sidebar-widget sidebar-two">
-                                <h2 class="sidebar-title">Level</h2>
-                                <ul class="sidebar-cbx-list">
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="level-cbx">
-                                            <label for="level-cbx">Junior (1)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="level-cbx-two">
-                                            <label for="level-cbx-two"> Manager (6)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="level-cbx-three">
-                                            <label for="level-cbx-three">Professional (3)</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="filter-name-item">
-                                            <input type="checkbox" name="expericence" id="level-cbx-four">
-                                            <label for="level-cbx-four">Senior (3)</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="common-sidebar-widget sidebar-two">
-                                <h2 class="sidebar-title">Skills</h2>
-                                <ul class="sidebar-tag">
-                                    <li><a href="#">Account Manager</a></li>
-                                    <li><a href="#">Administrative</a></li>
-                                    <li><a href="#">Android</a></li>
-                                    <li><a href="#">Angular</a></li>
-                                    <li><a href="#">app</a></li>
-                                    <li><a href="#">ASP.NET</a></li>
-                                    <li><a href="#">Automotive</a></li>
-                                    <li><a href="#">Banner</a></li>
-                                </ul>
-                            </div>
-                            
+
                         </div>
                     </div>
 
                     <div class="col-lg-8 order-lg-2 order-1">
-                        
+
                         <div class="tab-content">
                             <div id="list" class="tab-pane fade show active">
                                 <div class="row">
@@ -209,7 +167,7 @@
                                                             <div class="job-info-top">
                                                                 <div class="saveJob for-listing">
                                                                     <!-- <span class="featured-label">featured</span> -->
-                                                                    <a class="job-type-label ml-20 mr-20">{{ $item->type->nom }}</a>
+                                                                    <a  class="job-type-label ml-20 mr-20">{{ $item->type->nom }}</a>
                                                                     <a class="save-job" href="#quick-view-modal-container" data-toggle="modal">
                                                                         <i class="far fa-heart"></i>
                                                                     </a>
@@ -237,6 +195,10 @@
                                                                     @endforeach
                                                                 </div>
                                                             @endif
+
+                                                            <p>
+                                                                <a class="text text-info" href="{{route('details-offres-emplois',$item)}}">Pour plus de détails cliquez ici...</a>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
