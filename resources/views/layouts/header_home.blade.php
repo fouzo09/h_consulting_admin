@@ -7,7 +7,7 @@
                 <!--Logo start-->
                 <div class="col-xl-2 col-lg-2 col-12">
                     <div class="logo">
-                        <a href="#"><img src="{{ asset('assets/front/images/logo.png') }}" alt=""></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('assets/front/images/logo.png') }}" alt=""></a>
                     </div>
                 </div>
                 <!--Logo end-->
@@ -37,14 +37,8 @@
                 <div class="col-xl-4 col-lg-4 col-12">
                     <div class="header-btn-action d-flex justify-content-end">
                         <div class="btn-action-wrap d-flex">
-                            <div class="jp-author item">
-                                <a href="login-register.html">
-                                    <i class="lnr lnr-user"></i>
-                                    <span>Connexion</span>
-                                </a>
-                            </div>
                             <div class="jp-author-action item">
-                                <a href="#quick-view-modal-container" data-toggle="modal"> <span>Vous êtes employeur ?</span> <span class="fw-400">Poster une offre</span></a>
+                                <a href="#"> <span>Vous avez un compte ?</span> <span class="fw-400">Connectez</span></a>
                             </div>
                         </div>
                     </div>
