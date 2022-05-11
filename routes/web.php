@@ -3,19 +3,17 @@ use App\Role;
 use App\Permission;
 use App\User;
 
- 
-// Route::get('/new-register',function(){
-//     return view('newRegister');
-// });
-
-// Route::get('test',function(){
-//     return view('auth.passwords.reset');
-// });
 
 Route::get('/', 'HomeController@index')->name('/');
-Route::get('liste-offres-emplois', 'OffreEmploiController@getListeOffreEmploi')->name('liste-offres-emplois');
+Route::get('offres-emplois', 'OffreEmploiController@getListeOffreEmploi')->name('liste-offres-emplois');
 Route::get('details-offres-emplois/{emploi}', 'OffreEmploiController@getDetailsOffreEmploi')->name('details-offres-emplois');
 
+Route::get('heuristic', 'HeuristicController@getHeuristic')->name('heuristic');
+Route::get('formations', 'FormationController@getFormations')->name('formations');
+Route::get('formation/{id}', 'FormationController@getFormation')->name('formation');
+
+Route::get('actualites', 'ActualiteController@getActualites')->name('actualites');
+Route::get('actualite/{id}', 'ActualiteController@getActualite')->name('actualite');
 
 Route::get('nous-connaitre', 'HeuristicController@nousConaitre')->name('nous-connaitre');
 Route::get('nos-services', 'HeuristicController@nosService')->name('nos-services');

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class HeuristicController extends Controller
 {
+
+    public function getHeuristic(){
+        return view("front.heuristic");
+    }   
+
     public function nousConaitre(){
 
     }

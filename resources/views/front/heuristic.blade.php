@@ -1,9 +1,9 @@
 @extends('layouts.tpl_front')
 @section('content')
-        @include("layouts.header_home")
+        @include("layouts.header_page")
 
         <!-- Services Content Section Start -->
-        <div class="personal-skill-section section bg-image-proparty bg_image--2 pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+        <div id="services" class="personal-skill-section section bg-image-proparty bg_image--2 pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
             <div class="container">
                 <h2>Nos services</h2>
                 <div class="row g-0 border-top-left">
@@ -63,8 +63,9 @@
         </div>
         <!-- Services Content Section End -->
 
+
         <!-- About Content Section Start -->
-        <div class="about-content-section section">
+        <div id="who" class="about-content-section section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
@@ -86,43 +87,5 @@
         </div>
         <!-- About Content Section End -->
 
-        <!-- Services Content Section Start -->
-        <div class="personal-skill-section section pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
-            <div class="container">
-                <h2>Offres d'emplois</h2>
-                <div class="row">
-                    @foreach($offres as $item)
-                        <div class="col-md-3 mb-20">
-                            <!-- Single Job Start  -->
-                            <div class="single-job-grid-two">
-                                
-                                <div class="job-image">
-                                    <a href="{{ route('details-offres-emplois',$item) }}">
-                                        <img src="{{ asset('assets/img/offres-emplois/'. $item->image) }}" alt="logo">
-                                    </a>
-                                </div>
-                                <div class="job-info">
-                                    <div class="job-info-top">
-                                        <div class="title-name">
-                                            <h3 class="job-title">
-                                                <a href="{{ route('details-offres-emplois',$item) }}">{{ $item->titre }}</a>
-                                            </h3>
-                                            <div class="employer-name">
-                                                <a href="employer-details.html">{{ $item->entreprise->raison_sociale }}</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="job-meta-two">
-                                        <div class="field-datetime"><i class="lnr lnr-clock"></i>{{ "Posté il y'a environ ".\App\Models\Emploi::nombreDejourDuPoste($item->date_publication) }}</div>
-                                        <div class="field-map"><i class="lnr lnr-map-marker"></i>{{ \App\Models\Emploi::getVilles($item->id) }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Job End -->
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <!-- Services Content Section End -->
 
+@endsection

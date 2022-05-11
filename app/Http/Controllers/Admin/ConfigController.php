@@ -17,9 +17,8 @@ class ConfigController extends Controller
     }
 
     public function getIndex(){
-
+        
         $config = $this->configRepository->getConfig();
-       
         return view('config.index', compact('config'));
     }
 
