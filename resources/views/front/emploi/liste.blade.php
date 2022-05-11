@@ -158,7 +158,7 @@
                                             <div class="single-job style-two">
                                                 <div class="info-top">
                                                     <div class="job-image">
-                                                        <a href="#">
+                                                        <a href="{{ route('details-offres-emplois',$item) }}">
                                                             <img src="{{ asset('assets/img/offres-emplois/'. $item->image) }}" alt="logo">
                                                         </a>
                                                     </div>
@@ -174,7 +174,7 @@
                                                                 </div>
                                                                 <div class="title-name">
                                                                     <h3 class="job-title">
-                                                                        <a href="#">{{ $item->titre }}</a>
+                                                                        <a href="{{ route('details-offres-emplois',$item) }}">{{ $item->titre }}</a>
                                                                     </h3>
                                                                     <div class="employer-name">
                                                                         <a href="#">{{ $item->entreprise->raison_sociale }}</a>
@@ -196,9 +196,6 @@
                                                                 </div>
                                                             @endif
 
-                                                            <p>
-                                                                <a class="text text-info" href="{{route('details-offres-emplois',$item)}}">Pour plus de détails cliquez ici...</a>
-                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -207,17 +204,6 @@
                                         </div>
                                         @endforeach
                                     @endif
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <ul class="page-pagination">
-                                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                         </div>

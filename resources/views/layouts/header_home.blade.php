@@ -12,26 +12,8 @@
                 </div>
                 <!--Logo end-->
 
-                <!--Menu start-->
-                <div class="col-xl-6 col-lg-6 col-12">
-                    <nav class="main-menu">
-                        <ul>
-                            <li class="menu-item"><a href="{{ url('/') }}">Accueil</a></li>
-                            <li class="menu-item"><a href="{{ url('liste-offres-emplois') }}">Emploi</a></li>
-                            <li><a href="#">Heuristic <small class="icon-arrow"></small></a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Nous-connaitre</a></li>
-                                    <li><a href="#">Nos services</a></li>
-                                    <li><a href="#">Notre équipe</a></li>
-                                    <li><a href="#">Carrière</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="#">Formations</a></li>
-                            <li class="menu-item"><a href="#">Actualités</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!--Menu end-->
+                @include('layouts.menu')
+
 
                 <!-- Cart & Search Area Start -->
                 <div class="col-xl-4 col-lg-4 col-12">
