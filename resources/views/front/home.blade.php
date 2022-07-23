@@ -12,13 +12,13 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/about1.png" alt="">
+                                <img src="assets/images/icons/conseil_hr.png" alt="">
                             </div>
                             <div class="personal-skill-content">
-                                <h4 class="title">Management des ressources humaines</h4>
+                                <h4 class="title">Conseil RH </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque similique rem
-                                     necessitatibus aperiam officiis qui.
+                                    Nous offrons une prestation sur mesure de Conseil en Ressources Humaines. Besoin d’un conseil RH adapté à votre entreprise ? Contactez le professionnel en la matière.
+
                                 </p>
                             </div>
                         </div>
@@ -29,13 +29,13 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/about2.png" alt="">
+                                <img src="assets/images/icons/recruitment.png" alt="">
                             </div>
                             <div class="personal-skill-content">
-                                <h4 class="title">Développement organisationnel</h4>
+                                <h4 class="title">Recrutement</h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque similique rem
-                                     necessitatibus aperiam officiis qui.
+                                    Vous recherchez un collaborateur, une collaboratrice, des talents pour votre besoin ? 
+                                    Contactez nous pour vous accompagner dans vos demarches de recrutement.
                                 </p>
                             </div>
                         </div>
@@ -46,13 +46,68 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/about3.png" alt="">
+                                <img src="assets/images/icons/formation.png" alt="">
                             </div>
                             <div class="personal-skill-content">
-                                <h4 class="title">Développement personnel et professionnel</h4>
+                                <h4 class="title">Formation
+                                </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque similique rem
-                                     necessitatibus aperiam officiis qui.
+                                    Consultez notre catalogue de formations de RH, Management, Informatique, Finance, Comptabilité et Audit.
+                                    Besoin d’un programme personnalisé et adapté à vos besoins et disponibilités ? Contactez-nous. (lien formulaire de contact).
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Single Personal Skill End -->
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
+                        <!-- Single Personal Skill Start -->
+                        <div class="single-personal-skill">
+                            <div class="skill-icon">
+                                <img src="assets/images/icons/coaching.png" alt="">
+                            </div>
+                            <div class="personal-skill-content">
+                                <h4 class="title">Coaching
+                                </h4>
+                                <p>
+                                    Vous souhaitez Accroître vos compétences et réfléchir sur les pratiques professionnelles ?
+                                    Contactez nous pour un bilan de compétences et des séances de coaching adaptés.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Single Personal Skill End -->
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
+                        <!-- Single Personal Skill Start -->
+                        <div class="single-personal-skill">
+                            <div class="skill-icon">
+                                <img src="assets/images/icons/interim.png" alt="">
+                            </div>
+                            <div class="personal-skill-content">
+                                <h4 class="title">Intérim
+                                </h4>
+                                <p>
+                                    Vous souhaitez voir du personnel intérimaire pour les emplois ponctuels ?
+                                    Contactez nous pour bénéficier de notre vivier de talents.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Single Personal Skill End -->
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 d-flex">
+                        <!-- Single Personal Skill Start -->
+                        <div class="single-personal-skill">
+                            <div class="skill-icon">
+                                <img src="assets/images/icons/project-management.png" alt="">
+                            </div>
+                            <div class="personal-skill-content">
+                                <h4 class="title">Management de projets
+                                </h4>
+                                <p>
+                                Nous disposons d’un vivier de consultants pointus dans différents prêts à vous accompagner dans le management de vos projets.
+
                                 </p>
                             </div>
                         </div>
