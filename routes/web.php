@@ -1,7 +1,13 @@
 <?php
 use App\Role;
-use App\Permission;
 use App\User;
+use App\Permission;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\HeuristicController;
+use App\Http\Controllers\UserFrontController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\OffreEmploiController;
 
 
 Route::get('/', 'HomeController@index')->name('/');
@@ -20,6 +26,11 @@ Route::get('nos-services', 'HeuristicController@nosService')->name('nos-services
 Route::get('notre-equipe', 'HeuristicController@notreEquipe')->name('notre-equipe');
 Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 
+Route::get('Connexion-Inscription-User','UserFrontController@create')->name('user-connexion-inscription');
+Route::post('inscription-user','UserFrontController@store')->name('inscriptionUser');
+
+
+
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
@@ -28,7 +39,6 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     /**
      * Service routes
      */
-
     Route::get('list-services', 'ServiceController@getIndex')->name('list.services')->middleware('auth');
     Route::get('add-service', 'ServiceController@getAdd')->name('add.service')->middleware('auth');
     Route::post('add-service', 'ServiceController@postAdd')->name('add.service')->middleware('auth');
@@ -38,13 +48,9 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('edit-service/{serviceID}', 'ServiceController@EditServiceForm')->name('edit.service.form')->middleware('auth');
     Route::post('edit-service/{serviceID}', 'ServiceController@EditService')->name('edit.service')->middleware('auth');
 
-
-
-
     /**
      * Actualite routes
      */
-
     Route::get('list-actualites', 'ActualiteController@getIndex')->name('list.actualites')->middleware('auth');
     Route::get('add-actualite', 'ActualiteController@getAdd')->name('add.actualite')->middleware('auth');
     Route::post('add-actualite', 'ActualiteController@postAdd')->name('add.actualite')->middleware('auth');
@@ -54,11 +60,9 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     Route::get('edit-actualite/{actualiteID}', 'ActualiteController@EditActualiteForm')->name('edit.actualite.form')->middleware('auth');
     Route::post('edit-actualite/{actualiteID}', 'ActualiteController@EditActualite')->name('edit.actualite')->middleware('auth');
 
-
     /**
      * Formations routes
      */
-
     Route::get('list-formations', 'FormationController@getIndex')->name('list.formations')->middleware('auth');
     Route::get('add-formation', 'FormationController@getAdd')->name('add.formation')->middleware('auth');
     Route::post('add-formation', 'FormationController@postAdd')->name('add.formation')->middleware('auth');
@@ -116,7 +120,6 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     // Route::get('new-password','UserController@updatePasswordForm')->name('new.password.form')->middleware('auth');
     // Route::post('new-password','UserController@updatePassword')->name('new.password')->middleware('auth');
 
-
     /**
      * Roles routes
      */
@@ -128,18 +131,8 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     // Route::get('edit-role-form/{id}','RoleController@edit')->name('role.edit.form')->middleware('auth');
     // Route::post('edit-role/{id}','RoleController@update')->name('role.edit')->middleware('auth');
     // Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete')->middleware('auth');
-
 });
 
-
-
-
-
-
-
-
-
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/login-Front', [LoginController::class,'login'])->name('Authentification-front');
+Auth::routes();

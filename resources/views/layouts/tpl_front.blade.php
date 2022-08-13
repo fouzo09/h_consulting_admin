@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
+
     <!-- All css files are included here. -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/iconfont.min.css') }}">
@@ -38,6 +39,8 @@
 <body class="template-color-3">
 
 <div id="main-wrapper">
+
+    @include('alert.flash-message')
 
     @yield('content')
 <!--Footer section start-->
@@ -304,7 +307,7 @@
 <script src="{{ asset('assets/front/js/plugins/plugins.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/main.js') }}"></script>
 
-    
+
 
 </body>
 
