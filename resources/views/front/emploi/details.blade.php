@@ -18,7 +18,7 @@
     <!-- Breadcrumb Section Start -->
     <div class="breadcrumb-section section bg_color--5">
         <div class="container job-content-box">
-            
+
             <div class="row">
                 <div class="col-lg-8">
                     <div class="job-head-content">
@@ -45,7 +45,10 @@
                         <div class="common-sidebar-widget sidebar-three mb-0 pb-0">
                             <div class="sidebar-job-apply">
                                 <div class="action-button">
-                                    <a class="ht-btn text-center" href="#">Postuler <i class="ml-10 mr-0 fa fa-paper-plane"></i></a>
+                                    <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre">
+                                        Postuler
+                                        <i class="ml-10 mr-0 fa fa-paper-plane"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +111,11 @@
                                                 <i class="lnr lnr-briefcase"></i>
                                                 <span>Type : </span>
                                             </div>
-                                            <div class="field-value"><a class="fw-600" href="#">{{\App\Models\Type::find($emploi->type_id)->nom}}</a></div>
+                                            <div class="field-value">
+                                                <a class="fw-600" href="#">
+                                                    {{\App\Models\Type::find($emploi->type_id)->nom}}
+                                                </a>
+                                            </div>
                                         </div>
                                         <!-- Single Meta Field Start -->
                                     </div>
@@ -143,7 +150,7 @@
                                                     @else
                                                         {{ $emploi->experience }} year
                                                     @endif
-                                                    
+
                                                 </a>
                                             </div>
                                         </div>
@@ -181,7 +188,10 @@
                             <p>{{$emploi->contenu}}</p>
                         </div>
                         <div class="job-apply">
-                            <a class="ht-btn text-center" href="#">Postuler <i class="ml-10 mr-0 fa fa-paper-plane"></i></a>
+                            <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre">
+                                Postuler
+                                <i class="ml-10 mr-0 fa fa-paper-plane"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -207,7 +217,7 @@
                     <div class="col-md-2 mb-20">
                         <!-- Single Job Start  -->
                         <div class="single-job-grid-two">
-                            
+
                             <div class="job-image">
                                 <a href="{{ route('details-offres-emplois',$item) }}">
                                     <img style="max-width: 100px" src="{{ asset('assets/img/offres-emplois/'. $item->image) }}" alt="logo">
@@ -238,5 +248,57 @@
         </div>
     </div>
     <!-- Job Grid Section End -->
+
+@if(auth()->check())
+    {{-- mon modal pour postuler --}}
+        <div class="modal fade" id="PosterOffre">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title" aria-labelledby="Postuler à un poste" >
+
+                            <span>Postuler à cette offre</span>
+
+                            <span>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </span>
+
+                        </h4>
+
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form action="{{ Route('Envois-CV-Postulant',['emploi_Id'=>$emploi->id]) }}" method="post" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="modal-body" aria-describedby="content">
+                            <label for="cv">Sélectionner votre CV Svp!</label>
+                            <input type="file" name="cv" id="cv" class="form-control">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit"  class='btn btn-primary'>
+                                <i class="ml-10 mr-0 fa fa-paper-plane"></i>
+                                Envoyer
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+@else
+        {!! redirect('Connexion-Inscription-User') !!}
+@endif
+    {{-- fin de la modal --}}
 
 @endsection

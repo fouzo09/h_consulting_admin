@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Emploi;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,9 +17,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id', 'email', 'password','firstName','lastName',
-        'phone','phone',
+        'role_id',
+        'email',
+        'password',
+        'firstName',
+        'lastName',
+        'phone'
     ];
+
+    public function emplois()
+    {
+        return $this->belongsToMany(Emploi::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

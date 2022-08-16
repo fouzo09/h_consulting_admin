@@ -8,6 +8,7 @@ use App\Http\Controllers\HeuristicController;
 use App\Http\Controllers\UserFrontController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OffreEmploiController;
+use App\Http\Controllers\EnvoisCVPostulantController;
 
 
 Route::get('/', 'HomeController@index')->name('/');
@@ -26,20 +27,28 @@ Route::get('nos-services', 'HeuristicController@nosService')->name('nos-services
 Route::get('notre-equipe', 'HeuristicController@notreEquipe')->name('notre-equipe');
 Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 
+/**
+ * Inscription de l'utilisateur routes
+ */
+
 Route::get('Connexion-Inscription-User','UserFrontController@create')->name('user-connexion-inscription');
 Route::post('inscription-user','UserFrontController@store')->name('inscriptionUser');
 
+/**
+ * postuler à une offre d'emploi routes
+ */
 
+ Route::post('Envois-CV-Postulant/{emploi_Id}',[EnvoisCVPostulantController::class,'EnvoisCV'])->name('Envois-CV-Postulant');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
-    Route::get('/', 'ServiceController@getIndex')->middleware('auth');
+    Route::get('/', 'ServiceController@getIndex')->name('list.services')->middleware('auth');
 
     /**
      * Service routes
      */
-    Route::get('list-services', 'ServiceController@getIndex')->name('list.services')->middleware('auth');
+    Route::get('list-services', 'ServiceController@getIndex')->name('list.servi')->middleware('auth');
     Route::get('add-service', 'ServiceController@getAdd')->name('add.service')->middleware('auth');
     Route::post('add-service', 'ServiceController@postAdd')->name('add.service')->middleware('auth');
 
@@ -132,6 +141,10 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     // Route::post('edit-role/{id}','RoleController@update')->name('role.edit')->middleware('auth');
     // Route::get('delete-role/{id}','RoleController@destroy')->name('role.delete')->middleware('auth');
 });
+
+ /*
+ *  Authentification de l'utilisateur routes
+ */
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/login-Front', [LoginController::class,'login'])->name('Authentification-front');

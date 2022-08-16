@@ -298,6 +298,8 @@
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!-- All jquery file included here -->
+
+<script src="{{ asset('assets_front/js/vendor/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/jquery-3.5.0.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/jquery-migrate-3.1.0.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/bootstrap.bundle.min.js') }}"></script>
@@ -306,8 +308,6 @@
 <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 <script src="{{ asset('assets/front/js/plugins/plugins.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/main.js') }}"></script>
-
-
 
 </body>
 

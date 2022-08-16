@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -65,14 +66,24 @@ class LoginController extends Controller
 
         $authent = ['email'=>$email,'password'=>$password];
 
+        $user = User::where('email',$email)->first();
+        //dd($user->role_id);
+
         if (Auth::attempt($authent)){
 
-            dd('Authentification effectué avec succès');
+            if ($user->role_id == 1){
+
+                return redirect()->route('list.servi');
+
+            }else{
+
+                return redirect()->route('home');
+            }
 
         }else{
 
             return back()->with('error',"Nom d'utilisateur ou Mot de passe incorrecte");
-            
+
         }
 
     }
