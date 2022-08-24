@@ -2,7 +2,6 @@
 @section('content')
         @include("layouts.header_page")
 
-
          <!-- Breadcrumb Section Start -->
          <div class="breadcrumb-section section bg_color--5 pt-60 pt-sm-50 pt-xs-40 pb-60 pb-sm-50 pb-xs-40">
             <div class="container">

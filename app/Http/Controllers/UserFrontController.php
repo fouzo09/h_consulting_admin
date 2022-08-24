@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use App\User;
+use App\EmploiUser;
+use App\Models\Emploi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserFrontController extends Controller
@@ -116,5 +119,15 @@ class UserFrontController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function monCompte(){
+       // $AppUserJob = EmploiUser::where('User_id',Auth::User()->id)->get();
+        $postulant = Emploi::join('emploi_users', 'emploi_users.Emploi_id', '=', 'emplois.id')
+                        ->where('emploi_users.User_id',Auth::User()->id)
+                        ->select('emploi_users.*','emplois.titre','emplois.contenu')
+                        ->get();
+
+        return view('front.users.monCompte')->with('postulant',$postulant);
     }
 }

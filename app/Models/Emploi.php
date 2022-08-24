@@ -23,7 +23,7 @@ class Emploi extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('Emploi_id', 'User_id','CV');
     }
 
     public static function getVilles($offreID){

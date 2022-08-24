@@ -40,6 +40,17 @@ Route::post('inscription-user','UserFrontController@store')->name('inscriptionUs
 
  Route::post('Envois-CV-Postulant/{emploi_Id}',[EnvoisCVPostulantController::class,'EnvoisCV'])->name('Envois-CV-Postulant');
 
+ /**
+ * Compte de l'utilisateur connecté
+ */
+
+ Route::get('Compte-user-connecte-front',[ UserFrontController::class,'monCompte'])->name('monCompte');
+
+
+ /**
+ * les routes liées à la partie administrations
+ */
+
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
