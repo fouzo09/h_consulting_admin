@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -27,7 +29,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-     
+
     /**
      * Create a new controller instance.
      *
@@ -48,12 +50,46 @@ class LoginController extends Controller
 
             return redirect('/login');
         }
+    }
+
+    public function login(Request $request){
+
+        //validation des données
+        $validate = $request->validate([
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        //Authentification de l'utilisateur
+        $email = $request->email;
+        $password = $request->password;
+
+        $authent = ['email'=>$email,'password'=>$password];
+
+        $user = User::where('email',$email)->first();
+        //dd($user->role_id);
+
+        if (Auth::attempt($authent)){
+
+            if ($user->role_id == 1){
+
+                return redirect()->route('list.servi');
+
+            }else{
+
+                return redirect()->route('home');
+            }
+
+        }else{
+
+            return back()->with('error',"Nom d'utilisateur ou Mot de passe incorrecte");
+
+        }
 
     }
 
     function logout()
     {
         $this->guard()->logout();
-
     }
 }

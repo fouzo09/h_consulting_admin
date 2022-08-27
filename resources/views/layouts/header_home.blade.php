@@ -20,7 +20,16 @@
                     <div class="header-btn-action d-flex justify-content-end">
                         <div class="btn-action-wrap d-flex">
                             <div class="jp-author-action item">
-                                <a href="#"> <span>Vous avez un compte ?</span> <span class="fw-400">Connectez</span></a>
+                                @if(auth()->check())
+                                    <a href="{{ Route('monCompte') }}">
+                                            <span class="fw-400">Mon compte</span>
+                                    </a>
+                                @else
+                                    <a href="{{ Route('user-connexion-inscription') }}">
+                                        <span>Vous avez un compte ?</span>
+                                        <span class="fw-400">Connectez</span>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -272,7 +281,7 @@
                         <h3 class="sub-title">For Professionals</h3>
                         <p>Jobs & Job search. Find jobs in global. Executive jobs & work. Employment</p> -->
                     </div>
-                    
+
 
                 </div>
             </div>

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon">
+
     <!-- All css files are included here. -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/iconfont.min.css') }}">
@@ -38,6 +39,8 @@
 <body class="template-color-3">
 
 <div id="main-wrapper">
+
+    @include('alert.flash-message')
 
     @yield('content')
 <!--Footer section start-->
@@ -295,6 +298,8 @@
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!-- All jquery file included here -->
+
+<script src="{{ asset('assets_front/js/vendor/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/jquery-3.5.0.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/jquery-migrate-3.1.0.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/vendor/bootstrap.bundle.min.js') }}"></script>
@@ -303,8 +308,6 @@
 <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 <script src="{{ asset('assets/front/js/plugins/plugins.min.js') }}"></script>
 <script src="{{ asset('assets/front/js/main.js') }}"></script>
-
-    
 
 </body>
 

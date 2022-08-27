@@ -26,7 +26,7 @@ class OffreEmploiController extends Controller
 
     public function getDetailsOffreEmploi(Emploi $emploi)
     {
-        $relatedJobs = Emploi::where("secteurs",$emploi->secteurs)->get();
+        $relatedJobs = Emploi::where("secteur_id",$emploi->secteur_id)->get();
         return view("front.emploi.details",compact('emploi','relatedJobs'));
     }
 }
