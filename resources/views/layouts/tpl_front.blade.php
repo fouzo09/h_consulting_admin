@@ -47,20 +47,19 @@
     <div class="footer-top-section section pt-115 pt-lg-95 pt-md-75 pt-sm-55 pt-xs-45 pb-90 pb-lg-70 pb-md-40 pb-sm-20 pb-xs-15">
         <div class="container">
             <div class="row">
-
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget mb-30">
-                        <h6 class="title">Contact Info</h6>
+                        <h6 class="title">Contact</h6>
                         <div class="address">
                             <i class="lnr lnr-map-marker"></i>
-                            <span>8375 E. Heather Drive Tonawanda, Manchester 14150, United Kingdom</span>
+                            <span>Siege social: Kipé Kakimbo <br> BP-612 Conakry</span>
                         </div>
                         <div class="email">
                             <i class="lnr lnr-envelope"></i>
-                            <span>jopota@recruitment.com</span>
+                            <span>contact@h-consilium.com</span>
                         </div>
-                        <div class="phone theme-color">(+1) 000 987-1234</div>
+                        <div class="phone">+224 664 22 22 21/ +1 514 229 3656</div>
                         <div class="footer-widget-image d-flex mt-35">
                             <a class="mr-5" href="#"><img src="assets/images/app-store/app-store-2.png" alt=""></a>
                             <a href="#"><img src="assets/images/app-store/app-chplay-2.png" alt=""></a>
