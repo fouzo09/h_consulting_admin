@@ -152,7 +152,6 @@
                                     <li class="reason">Présentez votre CV à des milliers d'employeurs</li>
                                     <li class="reason">Gardez une trace de toutes vos candidatures</li>
                                 </ul>
-                                <span class="sale-text theme-color border-color">Connectez-vous aujourd'hui &amp; Obtenez un coupon de réduction de 15 % pour le premier achat de planification</span>
                             </div>
                         </div>
                     </div>

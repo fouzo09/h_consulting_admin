@@ -19,7 +19,7 @@
                 <div class="col-xl-4 col-lg-4 col-12">
                     <div class="header-btn-action d-flex justify-content-end">
                         <div class="btn-action-wrap d-flex">
-                            <div class="jp-author-action item">
+                            <div class="jp-author-action item" style="background-color: #0A2254">
                                 @if(auth()->check())
                                     <a href="{{ Route('monCompte') }}">
                                             <span class="fw-400">Mon compte</span>

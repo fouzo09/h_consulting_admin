@@ -193,7 +193,7 @@ img {
   max-width: 100%;
 }
 
-/*-- 
+/*--
     - Common Classes
 -----------------------------------------*/
 .p-40 {
@@ -369,7 +369,7 @@ img {
   background-size: cover;
   background-position: center center;
   background-blend-mode: overlay;
-  
+
 }
 
 .bg_image--2 {
@@ -572,7 +572,7 @@ img {
   background: #1dae0e;
 }
 
-/*-- 
+/*--
     - Input Placeholder
 -----------------------------------------*/
 input:-moz-placeholder, textarea:-moz-placeholder {
@@ -612,7 +612,7 @@ body.template-color-4 .text-color {
   color: #ff5d3c;
 }
 
-/*-- 
+/*--
     - Tab Content & Pane Fix
 ------------------------------------------*/
 .tab-content {
@@ -633,10 +633,10 @@ body.template-color-4 .text-color {
   overflow: visible;
 }
 
-/*-- 
+/*--
     - Main Wrapper
 ------------------------------------------*/
-/*-- 
+/*--
     - Section Title
 ------------------------------------------*/
 .section-title-wrap {
@@ -807,7 +807,7 @@ body.template-color-4 .text-color {
   font-weight: 500;
 }
 
-/*-- 
+/*--
     - Button
 ------------------------------------------*/
 a.ht-btn,
@@ -976,7 +976,7 @@ button.ht-btn:hover {
   opacity: 0.9;
 }
 
-/*-- 
+/*--
     - Page Banner Section
 ------------------------------------------*/
 /*-- Page Banner --*/
@@ -1103,7 +1103,7 @@ button.ht-btn:hover {
 /* -----------------
     Instafeed css
 ---------------------*/
-/*-- 
+/*--
     - Page Pagination
 ------------------------------------------*/
 .page-pagination {
@@ -1426,7 +1426,7 @@ blockquote.blockquote .author {
   line-height: 18px;
 }
 
-/*==================== 
+/*====================
     Map CSS
 =======================*/
 #map {
@@ -1443,7 +1443,7 @@ blockquote.blockquote .author {
 -----------------------------------------*/
 body.template-color-1 {
   /*-- Common CSS --*/
-  /*-- 
+  /*--
       - Button
   ------------------------------------------*/
   /*-- Main Menu --*/
@@ -1620,7 +1620,7 @@ body.template-color-1 .copyright p a:hover {
 
 body.template-color-2 {
   /*-- Common CSS --*/
-  /*-- 
+  /*--
       - Button
   ------------------------------------------*/
   /*-- Main Menu --*/
@@ -1797,7 +1797,7 @@ body.template-color-2 .copyright p a:hover {
 
 body.template-color-3 {
   /*-- Common CSS --*/
-  /*-- 
+  /*--
       - Button
   ------------------------------------------*/
   /*-- Main Menu --*/
@@ -1974,7 +1974,7 @@ body.template-color-3 .copyright p a:hover {
 
 body.template-color-4 {
   /*-- Common CSS --*/
-  /*-- 
+  /*--
       - Button
   ------------------------------------------*/
   /*-- Main Menu --*/
@@ -2879,7 +2879,7 @@ body.template-color-4 .copyright p a:hover {
 }
 
 /* =======================
-    Header menu 
+    Header menu
 ==========================*/
 .object-custom-menu {
   padding: 0;
@@ -6359,7 +6359,7 @@ body.template-color-4 .copyright p a:hover {
 }
 
 /*----------------------------------------*/
-/*  14. Candidate CSS
+/*  14. Candidate CSS 
 /*----------------------------------------*/
 .candidate-head-info {
   display: -webkit-box;
