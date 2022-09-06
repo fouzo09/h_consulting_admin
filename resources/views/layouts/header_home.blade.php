@@ -19,13 +19,13 @@
                 <div class="col-xl-4 col-lg-4 col-12">
                     <div class="header-btn-action d-flex justify-content-end">
                         <div class="btn-action-wrap d-flex">
-                            <div class="jp-author-action item" style="background-color: #0A2254">
+                            <div class="jp-author-action item" style="background-color: #F96046; color:black">
                                 @if(auth()->check())
-                                    <a href="{{ Route('monCompte') }}">
+                                    <a href="{{ Route('monCompte') }}" style="color:black">
                                             <span class="fw-400">Mon compte</span>
                                     </a>
                                 @else
-                                    <a href="{{ Route('user-connexion-inscription') }}">
+                                    <a href="{{ Route('user-connexion-inscription') }}" style="color:black">
                                         <span>Vous avez un compte ?</span>
                                         <span class="fw-400">Connectez</span>
                                     </a>

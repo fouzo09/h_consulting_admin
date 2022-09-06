@@ -98,7 +98,7 @@
                             <div class="newsletter-form">
                                 <form id="mc-form" class="mc-form">
                                     <input type="email" placeholder="Entrer votre mail..." required="" name="EMAIL">
-                                    <button class="ht-btn small-btn" type="submit" value="submit" style="background-color:#F96046">Envoyer</button>
+                                    <button class="ht-btn small-btn" type="submit" value="submit" style="background-color:#0A2254">Envoyer</button>
                                 </form>
                             </div>
                             <!-- mailchimp-alerts Start -->

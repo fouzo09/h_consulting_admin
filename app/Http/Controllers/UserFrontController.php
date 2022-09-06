@@ -76,6 +76,40 @@ class UserFrontController extends Controller
 
     }
 
+
+    public function storeModal(Request $request){
+        $request->validate([
+            'firsname'=>'required',
+            'lastname'=>'required',
+            'phone'=>'required | integer',
+            'email'=>'required',
+            'password'=>'required | min:6'
+        ]);
+
+        $confirmerPass = $request->conPassword;
+        $password = $request->password;
+
+        if($password == $confirmerPass){
+
+            //enregistrement de l'utilisateur.
+            User::create([
+                'role_id'=>2,
+                'firstName'=>$request->firsname,
+                'lastName'=>$request->lastname,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'password'=>Hash::make($request->password),
+                'status'=>0
+            ]);
+
+            return redirect()->route('heuristic')
+                             ->with('success','Inscription effectuée avec succès');;
+    }else{
+         //Erreur au niveau du mot de passe.
+         return redirect()->route('heuristic')
+                          ->with('error','Le mot de passe et la confirmation ne coincide pas');
+    }
+}
     /**
      * Display the specified resource.
      *

@@ -33,6 +33,7 @@ Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 
 Route::get('Connexion-Inscription-User','UserFrontController@create')->name('user-connexion-inscription');
 Route::post('inscription-user','UserFrontController@store')->name('inscriptionUser');
+Route::post('inscription-user-modal',[UserFrontController::class,'storeModal'])->name('inscriptionUserModal');
 
 /**
  * postuler à une offre d'emploi routes
