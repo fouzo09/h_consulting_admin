@@ -28,7 +28,7 @@
             content : none !important;
             background-color: inherit !important;
         }
-
+        
         .menu-item:hover::before{
             content : none !important;
             background-color: inherit !important;

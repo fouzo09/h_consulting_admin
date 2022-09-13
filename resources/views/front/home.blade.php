@@ -27,10 +27,11 @@
                 </div>
             </div>
         </div>
+
         <!-- About Content Section End -->
 
           <!-- Services Content Section Start -->
-          <div class="personal-skill-section section pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
+          <div class="personal-skill-section section bg-image-proparty bg_image--2 pt-120 pt-lg-100 pt-md-80 pt-sm-60 pt-xs-50 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
             <div class="container">
                 <h2 style="color:#0A2254;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Offres d'emplois</h2>
                 <br>
@@ -67,6 +68,7 @@
                     @endforeach
                 </div>
             </div>
+            <hr>
         </div>
         <!-- Services Content Section End -->
 
@@ -83,7 +85,7 @@
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title" style="color:#0A2254; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Conseil RH </h4>
-                                <p>
+                                <p style="text-align:justify;">
                                     Nous offrons une prestation sur mesure de Conseil en Ressources Humaines. Besoin d’un conseil RH adapté à votre entreprise ? Contactez le professionnel en la matière.
                                 </p>
                             </div>

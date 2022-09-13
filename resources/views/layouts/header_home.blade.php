@@ -98,131 +98,119 @@
 <!--Header Mobile section end-->
 
 <!-- Start Popup Menu -->
-<div class="popup-mobile-manu popup-mobile-visiable">
-    <div class="inner">
-        <div class="mobileheader">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/images/logo-mobile.png" alt="Multipurpose">
-                </a>
+    <div class="popup-mobile-manu popup-mobile-visiable">
+        <div class="inner">
+            <div class="mobileheader">
+                <div class="logo">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('assets/front/images/logo.png') }}" style="height: 80px; width: 45%;" alt="Multipurpose">
+                    </a>
+                </div>
+                <a class="mobile-close" href="#"></a>
             </div>
-            <a class="mobile-close" href="#"></a>
-        </div>
-        <div class="menu-content">
-            <ul class="menulist object-custom-menu">
-                <li class="has-mega-menu"><a href="#"><span>Home</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="index.html"><span>Home V1</span></a></li>
-                        <li><a href="index-2.html"><span>Home V2</span></a></li>
-                        <li><a href="index-3.html"><span>Home V3</span></a></li>
-                        <li><a href="index-4.html"><span>Home V4</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
+            <div class="menu-content">
+                <ul class="menulist object-custom-menu">
+                    <li>
+                        <a href="{{ url('/') }}">
+                            <span>Accueil</span>
+                        </a>
+                    </li>
 
-                <li class="has-mega-menu"><a href="#"><span>Jobs</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="job-listing.html"><span>Jobs Listing</span></a></li>
-                        <li><a href="job-with-map.html"><span>Jobs With Map</span></a></li>
-                        <li><a href="job-details.html"><span>Job Detail V1</span></a></li>
-                        <li><a href="job-details-two.html"><span>Job Detail V2</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
+                    <li>
+                        <a href="{{ url('offres-emplois') }}">
+                            <span>Offre d'emploi</span>
+                        </a>
+                    </li>
 
-                <li class="has-mega-menu"><a href="#"><span>Candidates</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="candidates-listing.html"><span>Candidates Listing</span></a></li>
-                        <li><a href="candidate-details.html"><span>Candidate Details V1</span></a></li>
-                        <li><a href="candidate-details-two.html"><span>Candidate Details V2</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
+                    <li class="has-mega-menu">
+                        <a href="#">
+                            <span>Heuristic</span>
+                        </a>
+                        <!-- Start Dropdown Menu -->
+                        <ul class="object-submenu">
+                            <li><a href="{{ url('heuristic').'#services' }}"><span>A propos</span></a></li>
+                            <li><a href="{{ url('heuristic').'#who' }}"><span>Carrière</span></a></li>
+                            <li><a href="{{ url('actualites') }}"><span>Actualité</span></a></li>
+                        </ul>
+                        <!-- End Dropdown Menu -->
+                    </li>
 
-                <li class="has-mega-menu"><a href="#"><span>Employers</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="employer-listing.html"><span>Employers Listing</span></a></li>
-                        <li><a href="employer-details.html"><span>Employer Detail V1</span></a></li>
-                        <li><a href="employer-details-two.html"><span>Employer Detail V2</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
-
-                <li class="has-mega-menu"><a href="#"><span>Blog</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="blog.html"><span>Blog</span></a></li>
-                        <li><a href="blog-details.html"><span>Blog Details</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
-
-                <li class="has-mega-menu"><a href="#"><span>Pages</span></a>
-                    <!-- Start Dropdown Menu -->
-                    <ul class="object-submenu">
-                        <li><a href="about.html"><span>About Us</span></a></li>
-                        <li><a href="contact.html"><span>Contact Us</span></a></li>
-                        <li><a href="faq.html"><span>FAQS</span></a></li>
-                        <li><a href="pricing.html"><span>Pricing & Plan</span></a></li>
-                        <li><a href="login-register.html"><span>Login / Register</span></a></li>
-                        <li><a href="dashboard.html"><span>Dashboard</span></a></li>
-                        <li><a href="shop.html"><span>Shop</span></a></li>
-                        <li><a href="product-details.html"><span>Product Details</span></a></li>
-                        <li><a href="cart.html"><span>Cart</span></a></li>
-                        <li><a href="checkout.html"><span>Checkout</span></a></li>
-                        <li><a href="wishlist.html"><span>Wishlist</span></a></li>
-                        <li><a href="404.html"><span>404 Error</span></a></li>
-                    </ul>
-                    <!-- End Dropdown Menu -->
-                </li>
-            </ul>
+                    <li>
+                        <a href="{{ url('formations') }}">
+                            <span>Formations</span>
+                        </a>
+                    </li>
+                    {{-- Menu de la connexion --}}
+                    <li>
+                        @if(auth()->check())
+                            <a href="{{ Route('monCompte') }}">
+                                <span class="text">Compte</span>
+                            </a>
+                        @else
+                            <a href="{{ Route('user-connexion-inscription') }}">
+                                <span class="text">Connectez</span>
+                            </a>
+                        @endif
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<!-- End Popup Menu -->
+    <!-- End Popup Menu -->
 
-<!-- Bottom Navbar Mobile Start -->
-<div class="bottom-navbar-mobile section d-block d-lg-none">
+  <!-- Bottom Navbar Mobile Start -->
+  <div class="bottom-navbar-mobile section d-block d-lg-none">
     <nav>
         <ul class="list-actions">
             <li>
-                <a class="toggle-btn active" href="index.html">
+                <a class="toggle-btn active" href="{{ url('/') }}">
                     <span><i class="lnr lnr-home"></i></span>
-                    <span class="text">Home</span>
+                    <span class="text">Accueil</span>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ url('offres-emplois') }}">
+                    <span><i class="lnr lnr-hand"></i></span>
+                    <span class="text">Offres emplois</span>
+                </a>
+            </li>
+
             <li>
                 <a class="toggle-btn toggle-btn-js" data-target="#job-list-mobile-id" href="#">
                     <span><i class="lnr lnr-list"></i></span>
-                    <span class="text">Jobs list</span>
+                    <span class="text">Heuristic</span>
                 </a>
             </li>
+
             <li>
-                <a href="login-register.html">
-                    <span><i class="lnr lnr-heart"></i></span>
-                    <span class="text">Save</span>
-                </a>
-            </li>
-            <li>
-                <a class="toggle-btn-two toggle-btn-js" data-target="#notifications-mobile-id" href="#">
+                <a href="{{ url('formations') }}">
                     <span><i class="lnr lnr-alarm"></i></span>
-                    <span class="text">Notifications</span>
+                    <span class="text">Formations</span>
                 </a>
             </li>
             <li>
-                <a href="login-register.html">
-                    <span><i class="lnr lnr-user"></i></span>
-                    <span class="text">Account</span>
-                </a>
+                @if(auth()->check())
+                    <a href="{{ Route('monCompte') }}">
+                        <span>
+                            <i class="lnr lnr-user"></i>
+                        </span>
+                        <span class="text">Compte</span>
+                    </a>
+                @else
+                    <a href="{{ Route('user-connexion-inscription') }}">
+                        <span>
+                            <i class="lnr lnr-user"></i>
+                        </span>
+                        <span class="text">Connectez</span>
+                    </a>
+                @endif
             </li>
         </ul>
     </nav>
 </div>
 <!-- Bottom Navbar Mobile End -->
+
 
 <!-- Bottom Navbar Mobile Popup Start -->
 <div class="mobile-popup">
@@ -230,37 +218,14 @@
         <div class="heading">
             <div class="title">
                 <i class="lnr lnr-list"></i>
-                <h3>All Jobs list</h3>
+                <h3>Heuristic</h3>
             </div>
-            <a class="view-all" href="#">See all jobs</a>
         </div>
         <div class="content-popup-scroll">
             <ul class="list-item">
-                <li><a href="job-listing.html"><i class="lnr lnr-printer"></i>Accounting </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-film-play"></i>Broadcasting </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-phone"></i>Customer Service </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-bullhorn"></i>Digital Marketing </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-chart-bars"></i>Finance & Accounting </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-smartphone"></i>Game Mobile </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-picture"></i>Graphics & Design </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-home"></i>Graphics & Design </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-database"></i>Medical Doctor </a></li>
-                <li><a href="job-listing.html"><i class="lnr lnr-dinner"></i>Restaurant </a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="notifications-mobile" id="notifications-mobile-id">
-        <div class="heading">
-            <div class="title">
-                <i class="lnr lnr-list"></i>
-                <h3>All Notifications</h3>
-            </div>
-            <a class="view-all" href="#">See all jobs</a>
-        </div>
-        <div class="content-popup-scroll">
-            <ul class="list-item">
-                <li><a href="login-register.html"><i class="lnr lnr-book"></i><span><b class="highlight">Register now</b> to reach dream jobs easier.</span> </a></li>
-                <li><a href="job-with-map.html"><i class="lnr lnr-book"></i><span><b class="highlight">Job suggestion</b> you might be interested based on your profile.</span> </a></li>
+                <li><a href="{{ url('heuristic').'#services' }}"><i class="lnr lnr-printer"></i>A propos </a></li>
+                <li><a href="{{ url('heuristic').'#who' }}"><i class="lnr lnr-film-play"></i>Carrière</a></li>
+                <li><a href="{{ url('actualites') }}"><i class="lnr lnr-phone"></i>Actualité</a></li>
             </ul>
         </div>
     </div>

@@ -102,7 +102,7 @@ class UserFrontController extends Controller
                 'status'=>0
             ]);
 
-            return redirect()->route('heuristic')
+            return redirect()->route('user-connexion-inscription')
                              ->with('success','Inscription effectuée avec succès');;
     }else{
          //Erreur au niveau du mot de passe.

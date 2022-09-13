@@ -35,11 +35,12 @@
                                 </div>
                             </div>
                         </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;
                     @endforeach
                 </div>
             </div>
         </div>
         <!-- Job Listing Section End -->
-
 
 @endsection
