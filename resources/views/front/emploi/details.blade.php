@@ -23,6 +23,7 @@
                 <div class="col-lg-8">
                     <div class="job-head-content">
                         <h1 class="title">{{ $emploi->titre }}</h1>
+                        <?php $emploi_id = $emploi->id ?>
                         <p class="employer-name">{{ $emploi->entreprise->raison_sociale }}</p>
                         <div class="job-meta-detail">
                             <ul>
@@ -35,6 +36,20 @@
                                     <i class="lnr lnr-hourglass"></i>
                                     <span class="text">Valide jusqu'au : </span>
                                     <span class="date theme-color"> {{$emploi->date_publication}} </span>
+                                    <br>
+                                     {{-- le message d'erreur de la connection --}}
+                                    <div>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    {{-- fin de l'erreur de connection --}}
                                 </li>
                             </ul>
                         </div>
@@ -45,7 +60,7 @@
                         <div class="common-sidebar-widget sidebar-three mb-0 pb-0">
                             <div class="sidebar-job-apply">
                                 <div class="action-button">
-                                    <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre">
+                                    <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre" style="background-color: #0A2254; color:white ">
                                         Postuler
                                         <i class="ml-10 mr-0 fa fa-paper-plane"></i>
                                     </a>
@@ -83,7 +98,9 @@
                 <div class="col-lg-4 order-lg-2 order-2 mt-sm-60 mt-xs-50">
                     <div class="sidebar-wrapper-three">
                         <div class="common-sidebar-widget sidebar-three">
-                            <h2 class="sidebar-title">Informations de l'offre</h2>
+                            <h2 class="sidebar-title">
+                                Informations de l'offre
+                            </h2>
                             <div class="sidebar-meta">
                                 <div class="row g-0">
 
@@ -188,7 +205,7 @@
                             <p>{{$emploi->contenu}}</p>
                         </div>
                         <div class="job-apply">
-                            <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre">
+                            <a class="ht-btn text-center" href="#" data-bs-toggle="modal" data-bs-target="#PosterOffre" style="background-color: #0A2254; color:white">
                                 Postuler
                                 <i class="ml-10 mr-0 fa fa-paper-plane"></i>
                             </a>
@@ -249,7 +266,10 @@
     </div>
     <!-- Job Grid Section End -->
 
-@if(auth()->check())
+
+  {{-- Verification de la connexion si l'utilisateur est connection --}}
+
+ @if(auth()->check())
     {{-- mon modal pour postuler --}}
         <div class="modal fade" id="PosterOffre">
             <div class="modal-dialog">
@@ -260,6 +280,7 @@
 
                             <span>Postuler à cette offre</span>
 
+                            {{-- Message d'erreur --}}
                             <span>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -271,34 +292,152 @@
                                     </div>
                                 @endif
                             </span>
-
+                            {{-- Fin du message d'erreur --}}
                         </h4>
 
                         <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    <form action="{{ Route('Envois-CV-Postulant',['emploi_Id'=>$emploi->id]) }}" method="post" enctype="multipart/form-data">
+                {{-- Debut du formulaire --}}
+                <form action="{{ Route('Envois-CV-Postulant',['emploi_Id'=>$emploi->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
 
+                        {{-- Debut Modal body --}}
                         <div class="modal-body" aria-describedby="content">
                             <label for="cv">Sélectionner votre CV Svp!</label>
                             <input type="file" name="cv" id="cv" class="form-control">
                         </div>
+                        {{-- fin de la modal body --}}
 
+                        {{-- Debut du modal footer --}}
                         <div class="modal-footer">
                             <button type="submit"  class='btn btn-primary'>
                                 <i class="ml-10 mr-0 fa fa-paper-plane"></i>
                                 Envoyer
                             </button>
                         </div>
+                       {{-- fin du modal footer --}}
 
-                    </form>
-                </div>
+                </form>
+                {{-- fin du formulaire --}}
             </div>
         </div>
+    </div>
 @else
-        {!! redirect('Connexion-Inscription-User') !!}
+
+    {{-- mon modal pour se connecter ou s'inscrire --}}
+    <div class="modal fade" id="PosterOffre">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{-- Debut du modal header --}}
+                <div class="modal-header">
+                    <h6 class="modal-title" aria-labelledby="Postuler à un poste" style="font-size: 14px">
+                        <span>Veuillez-vous connecter ou vous inscrire pour postuler</span>
+                    </h6>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                {{-- fin de la modal header --}}
+
+                {{-- debut du formulaire --}}
+                <form action="{{ Route('inscriptionUserModal') }}" method="post">
+                   @csrf
+
+                   {{-- Debut de modal body --}}
+                   <div class="modal-body" aria-describedby="content">
+                        <div class="single-input">
+                            <input type="text" placeholder="Email" name="email" class="form form-control">
+                        </div>
+                        <div class="single-input">
+                            <input type="password" placeholder="Mot de passe" name="password" class="form form-control">
+                        </div>
+                    </div>
+                    {{-- fin de la modal body --}}
+
+                    {{-- Debut du modal footer --}}
+                    <div class="modal-footer">
+                        <div class="single-input">
+                            <button class="btn btn-primary" type="submit" style="background-color: #0A2254; margin-left: 35%">Connexion</button>
+                        </div>
+                        <div style="margin-right: 30%">
+                            Pas de compte ?
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#inscriptionModal" style="text-decoration: underline">S'inscrire</a>
+                        </div>
+                    </div>
+                    {{-- fin du modal footer --}}
+
+                </form>
+                {{-- fin du formulaire --}}
+
+            </div>
+        </div>
+    </div>
+    {{-- fin du modal pour se connecter ou s'inscrire --}}
 @endif
-    {{-- fin de la modal --}}
+    {{-- fin de la verification --}}
+
+
+     {{-- Modal de l'inscription --}}
+     <div class="modal fade" id="inscriptionModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{-- Debut du modal header --}}
+                <div class="modal-header">
+                    <h6 class="modal-title" aria-labelledby="Postuler à un poste" style="font-size: 14px">
+                        <span>Inscription de l'utilisateur</span>
+                    </h6>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                {{-- fin de la modal header --}}
+
+                 {{-- debut du formulaire --}}
+                 <form action="{{ Route('inscriptionUserModal') }}" method="post">
+                    @csrf
+
+                    {{-- Debut de modal body --}}
+                    <div class="modal-body" aria-describedby="content">
+                        <div class="single-input">
+                            <input type="text" placeholder="Prénom" name="firsname" class="form form-control">
+                        </div>
+
+                        <div class="single-input">
+                            <input type="text" placeholder="Nom" name="lastname" class="form form-control">
+                        </div>
+
+                        <div class="single-input">
+                            <input type="tel" placeholder="Numéro de téléphone" name="phone" class="form form-control">
+                        </div>
+
+                        <div class="single-input">
+                            <input type="email" placeholder="Adresse email" name="email" class="form form-control">
+                        </div>
+
+                        <div class="single-input">
+                            <input type="password" placeholder="Mot de passe" name="password" class="form form-control">
+                        </div>
+
+                        <div class="single-input">
+                            <input type="password" placeholder="Confirmer Mot de passe" name="conPassword" class="form form-control">
+                        </div>
+                     </div>
+                     {{-- fin de la modal body --}}
+
+                     {{-- Debut du modal footer --}}
+                     <div class="modal-footer">
+                         <div class="single-input">
+                             <button class="btn btn-primary" type="submit" style="background-color: #0A2254; margin-left: 40%">
+                                Inscrire
+                            </button>
+                         </div>
+                     </div>
+                     {{-- fin du modal footer --}}
+
+                 </form>
+                 {{-- fin du formulaire --}}
+
+            </div>
+        </div>
+     </div>
 
 @endsection

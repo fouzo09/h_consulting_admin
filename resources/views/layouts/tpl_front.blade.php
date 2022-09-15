@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/iconfont.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/vendor/helper.css') }}">
     <!-- <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/plugins.css') }}"> -->
-    <!-- <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}"> -->
+
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/plugins/plugins.min.css') }}">
@@ -28,7 +28,7 @@
             content : none !important;
             background-color: inherit !important;
         }
-
+        
         .menu-item:hover::before{
             content : none !important;
             background-color: inherit !important;
@@ -94,11 +94,11 @@
                     <div class="footer-widget mb-30">
                         <h6 class="title">Newsletter</h6>
                         <div class="newsletter">
-                            <p>Join our email subscription now to get updates on <strong>new jobs</strong> and <strong>notifications</strong>.</p>
+                            <p>Abonnez-vous à la Newsletter pour recevoir les <strong>notifications</strong> des offres<strong> d'emplois</strong></p>
                             <div class="newsletter-form">
                                 <form id="mc-form" class="mc-form">
-                                    <input type="email" placeholder="Enter Your email..." required="" name="EMAIL">
-                                    <button class="ht-btn small-btn" type="submit" value="submit">Subscribe</button>
+                                    <input type="email" placeholder="Entrer votre mail..." required="" name="EMAIL">
+                                    <button class="ht-btn small-btn" type="submit" value="submit" style="background-color:#0A2254">Envoyer</button>
                                 </form>
                             </div>
                             <!-- mailchimp-alerts Start -->
