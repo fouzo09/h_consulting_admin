@@ -12,7 +12,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/conseil_hr.png" alt="">
+                                <img src="{{ asset('assets/images/icons/conseil_hr.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Conseil RH </h4>
@@ -29,7 +29,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/recruitment.png" alt="">
+                                <img src="{{ asset('assets/images/icons/recruitment.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Recrutement</h4>
@@ -46,7 +46,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/formation.png" alt="">
+                                <img src="{{ asset('assets/images/icons/formation.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Formation
@@ -64,7 +64,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/coaching.png" alt="">
+                                <img src="{{ asset('assets/images/icons/coaching.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Coaching
@@ -82,7 +82,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/interim.png" alt="">
+                                <img src="{{ asset('assets/images/icons/interim.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Intérim
@@ -100,7 +100,7 @@
                         <!-- Single Personal Skill Start -->
                         <div class="single-personal-skill">
                             <div class="skill-icon">
-                                <img src="assets/images/icons/project-management.png" alt="">
+                                <img src="{{ asset('assets/images/icons/project-management.png') }}" alt="">
                             </div>
                             <div class="personal-skill-content">
                                 <h4 class="title">Management de projets
