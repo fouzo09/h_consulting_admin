@@ -3,11 +3,15 @@ use App\Role;
 use App\User;
 use App\Permission;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DomaineController;
+use App\Http\Controllers\SecteurController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HeuristicController;
 use App\Http\Controllers\UserFrontController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\OffreEmploiController;
+use App\Http\Controllers\TypeContratController;
 use App\Http\Controllers\EnvoisCVPostulantController;
 
 
@@ -30,7 +34,6 @@ Route::get('carriere', 'HeuristicController@carriere')->name('carriere');
 /**
  * Inscription de l'utilisateur routes
  */
-
 Route::get('Connexion-Inscription-User','UserFrontController@create')->name('user-connexion-inscription');
 Route::post('inscription-user','UserFrontController@store')->name('inscriptionUser');
 Route::post('inscription-user-modal',[UserFrontController::class,'storeModal'])->name('inscriptionUserModal');
@@ -38,13 +41,11 @@ Route::post('inscription-user-modal',[UserFrontController::class,'storeModal'])-
 /**
  * postuler à une offre d'emploi routes
  */
-
  Route::post('Envois-CV-Postulant/{emploi_Id}',[EnvoisCVPostulantController::class,'EnvoisCV'])->name('Envois-CV-Postulant');
 
  /**
  * Compte de l'utilisateur connecté
  */
-
  Route::get('Compte-user-connecte-front',[ UserFrontController::class,'monCompte'])->name('monCompte');
 
 
@@ -56,6 +57,41 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
 {
 
     Route::get('/', 'ServiceController@getIndex')->name('list.services')->middleware('auth');
+
+    /**
+     * Dashboard
+     */
+    Route::get('dashboard',[DashboardController::class,'__invoke'])->name('dashboard');
+
+    /**
+     * Type contrat
+     */
+    Route::get('liste-type-contrat',[TypeContratController::class,'index'])->name('listeTypeContrat');
+    Route::get('create-type-contrat',[TypeContratController::class,'create'])->name('createTypeContrat');
+    Route::post('create-type-contrat',[TypeContratController::class,'store'])->name('storeTypeContrat');
+    Route::get('modifier-type-contrat/{id}',[TypeContratController::class,'edit'])->name('modifieTypeContrat');
+    Route::post('modifier-type-contrat/{id}',[TypeContratController::class,'update'])->name('updateTypeContrat');
+    Route::get('supprimer-type-contrat/{id}',[TypeContratController::class,'destroy'])->name('supprimerTypeContrat');
+
+    /**
+     * Secteurs
+     */
+    Route::get('liste-Secteur',[SecteurController::class,'index'])->name('listeSecteur');
+    Route::get('create-Secteur',[SecteurController::class,'create'])->name('createSecteur');
+    Route::post('create-secteur',[SecteurController::class,'store'])->name('storeSecteur');
+    Route::get('modifier-secteur/{id}',[SecteurController::class,'edit'])->name('modifieSecteur');
+    Route::post('modifier-secteur/{id}',[SecteurController::class,'update'])->name('updateSecteur');
+    Route::get('supprimer-Secteur/{id}',[SecteurController::class,'destroy'])->name('supprimerSecteur');
+
+    /**
+     * Domaines
+     */
+    Route::get('liste-domaines',[DomaineController::class,'index'])->name('listeDomaine');
+    Route::get('create-domaines',[DomaineController::class,'create'])->name('createDomaine');
+    Route::post('create-domaines',[DomaineController::class,'store'])->name('storeDomaine');
+    Route::get('modifier-domaines/{id}',[DomaineController::class,'edit'])->name('modifieDomaine');
+    Route::post('modifier-domaines/{id}',[DomaineController::class,'update'])->name('updateDomaine');
+    Route::get('supprimer-domaines/{id}',[DomaineController::class,'destroy'])->name('supprimerDomaine');
 
     /**
      * Service routes
@@ -135,7 +171,7 @@ Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function()
     // Route::get('show-user/{id}','RoleController@show')->name('user.show')->middleware('auth');
     // Route::get('user-disable/{id}','UserController@disable')->name('disable')->middleware('auth');
     Route::get('edit-user-form/{id}','UserController@edit')->name('user.edit.form')->middleware('auth');
-    // Route::post('edit-user/{id}','UserController@update')->name('user.edit')->middleware('auth');
+    Route::post('edit-user/{id}','UserController@update')->name('user.edit')->middleware('auth');
     Route::get('delete-user/{id}','UserController@destroy')->name('user.delete')->middleware('auth');
     Route::get('logout-user','UserController@logout')->name('logout.user')->middleware('auth');
     // Route::get('new-password','UserController@updatePasswordForm')->name('new.password.form')->middleware('auth');

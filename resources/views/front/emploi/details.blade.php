@@ -112,9 +112,9 @@
                                                 <span>Villes : </span>
                                             </div>
                                             <div class="field-value">
-                                                @foreach(json_decode($emploi->ville_id) as $item)
+                                                {{-- @foreach(json_decode($emploi->ville_id) as $item)
                                                     <span> {{\App\Models\Ville::find($item)->nom}}</span>
-                                                @endforeach
+                                                @endforeach --}}
 
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@
                                         <div class="single-meta-field">
                                             <div class="field-label">
                                                 <i class="lnr lnr-layers"></i>
-                                                <span>Skills </span>
+                                                <span>Skills</span>
                                             </div>
                                             <div class="field-value">
                                                 <div class="job-skill-tag">
@@ -239,7 +239,9 @@
                                 <a href="{{ route('details-offres-emplois',$item) }}">
                                     <img style="max-width: 100px" src="{{ asset('assets/img/offres-emplois/'. $item->image) }}" alt="logo">
                                 </a>
-                                <span class="featured-label for-grid">{{ \App\Models\Type::find($emploi->type_id)->nom }}</span>
+                                <span class="featured-label for-grid">
+                                    {{ \App\Models\Type::find($emploi->type_id)->nom }}
+                                </span>
                             </div>
                             <div class="job-info">
                                 <div class="job-info-top">

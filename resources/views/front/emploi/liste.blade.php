@@ -126,7 +126,6 @@
                                             </div>
                                         </li>
                                     @endforeach
-
                                 </ul>
                             </div>
                             <div class="common-sidebar-widget sidebar-two">
@@ -167,7 +166,7 @@
                                                             <div class="job-info-top">
                                                                 <div class="saveJob for-listing">
                                                                     <!-- <span class="featured-label">featured</span> -->
-                                                                    <a  class="job-type-label ml-20 mr-20">{{ $item->type->nom }}</a>
+                                                                    <a  class="job-type-label ml-20 mr-20"></a>
                                                                     <a class="save-job" href="#quick-view-modal-container" data-toggle="modal">
                                                                         <i class="far fa-heart"></i>
                                                                     </a>

@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Adresse</label>
-                    <textarea class="form-control" name="adresse" id="" cols="10" rows="10">{{$entreprise->adresse}}</textarea>
+                    <textarea class="form-control" name="adresse" id="summary-ckeditor" cols="10" rows="10">{{$entreprise->adresse}}</textarea>
                     @if($errors->has('adresse'))
                         <div class="error text-danger">{{ $errors->first('adresse') }}</div>
                     @endif
@@ -45,7 +45,10 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Modifier</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save "></i>
+                        Modifier
+                    </button>
                 </div>
             </form>
         </div>

@@ -5,10 +5,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-10">
-            <h1>Liste des services</h1>
+            <h1>Liste des Carrières</h1>
           </div>
           <div class="col-sm-2 pull-right">
-            <a href="{{ url('admin/add-service') }}" class="btn btn-default btn-md"><strong>Ajouter un service</strong></a>
+            <a href="{{ url('admin/add-service') }}" class="btn btn-default btn-md"><strong>Ajouter une carrière</strong></a>
           </div>
         </div>
       </div><!-- /.container-fluid -->

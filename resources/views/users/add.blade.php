@@ -115,7 +115,10 @@
                   </div>
                   <br>
                   <div class="form-group">
-                      <button type="submit" class="btn btn-dark">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save "></i>
+                        Enregistrer
+                    </button>
                   </div>
                 </div>
             </form>
