@@ -22,7 +22,10 @@
                             <div class="jp-author-action item" style="background-color: #F96046; color:black">
                                 @if(auth()->check())
                                     <a href="{{ Route('monCompte') }}" style="color:black">
-                                            <span class="fw-400">Mon compte</span>
+                                            <span class="fw-400">
+                                                <i class="fas fa-user"></i>
+                                                {{ Auth::User()->firstName.' '.Auth::User()->lastName }}
+                                            </span>
                                     </a>
                                 @else
                                     <a href="{{ Route('user-connexion-inscription') }}" style="color:black">

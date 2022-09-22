@@ -137,7 +137,7 @@
             </a>
           </li>
           <div class="sb-sidenav-menu-heading" style="color:black">
-            Paramétrage de l'application
+            Paramétrages
           </div>
           <li class="nav-item">
             <a href="{{ url('admin/config') }}" class="nav-link" style="color:white">
@@ -150,7 +150,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('admin/logout-user') }}" class="nav-link" style="color:silver">
+            <a href="{{ url('admin/logout-user') }}" class="nav-link" style="color:black">
               Deconnexion
             </a>
           </li>

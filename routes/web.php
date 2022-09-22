@@ -46,9 +46,9 @@ Route::post('inscription-user-modal',[UserFrontController::class,'storeModal'])-
  /**
  * Compte de l'utilisateur connecté
  */
- Route::get('Compte-user-connecte-front',[ UserFrontController::class,'monCompte'])->name('monCompte');
+ Route::get('Compte-user-connecte-front',[UserFrontController::class,'monCompte'])->name('monCompte');
 
-
+ Route::post('mon-profile',[UserFrontController::class,'monProfile'])->name('monProfile');
  /**
  * les routes liées à la partie administrations
  */

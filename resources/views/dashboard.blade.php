@@ -172,6 +172,7 @@
                                     <th>Contenu de l'emploi</th>
                                     <th>Date de la postulation</th>
                                     <th>C.V du Postulant</th>
+                                    <th>Lettre de motivation</th>
                             </thead>
 
                             <tbody>
@@ -184,6 +185,12 @@
                                         <a href="{{ asset('storage/'.$candidat->CV) }}"
                                         class="view-application" target="_blank">
                                         Telecharger le CV
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ asset('storage/'.$candidat->lettre_moti) }}"
+                                        class="view-application" target="_blank">
+                                        Telecharger la lettre
                                         </a>
                                     </td>
                                 </tr>

@@ -112,10 +112,9 @@
                                                 <span>Villes : </span>
                                             </div>
                                             <div class="field-value">
-                                                {{-- @foreach(json_decode($emploi->ville_id) as $item)
+                                                @foreach(json_decode($emploi->ville_id) as $item)
                                                     <span> {{\App\Models\Ville::find($item)->nom}}</span>
-                                                @endforeach --}}
-
+                                                @endforeach
                                             </div>
                                         </div>
                                         <!-- Single Meta Field Start -->
@@ -130,7 +129,7 @@
                                             </div>
                                             <div class="field-value">
                                                 <a class="fw-600" href="#">
-                                                    {{\App\Models\Type::find($emploi->type_id)->nom}}
+                                                    {{-- {{\App\Models\Type::find($emploi->type_id)->nom}} --}}
                                                 </a>
                                             </div>
                                         </div>
@@ -145,9 +144,9 @@
                                                 <span>Domaines : </span>
                                             </div>
                                             <div class="field-value">
-                                                    @foreach (json_decode($emploi->domaine_id) as $item)
+                                                    {{-- @foreach (json_decode($emploi->domaine_id) as $item)
                                                         <span>{{\App\Models\Domaine::find($item)->nom}}</span>
-                                                    @endforeach
+                                                    @endforeach --}}
                                             </div>
                                         </div>
                                         <!-- Single Meta Field Start -->
@@ -240,7 +239,7 @@
                                     <img style="max-width: 100px" src="{{ asset('assets/img/offres-emplois/'. $item->image) }}" alt="logo">
                                 </a>
                                 <span class="featured-label for-grid">
-                                    {{ \App\Models\Type::find($emploi->type_id)->nom }}
+                                    {{-- {{ \App\Models\Type::find($emploi->type_id)->nom }} --}}
                                 </span>
                             </div>
                             <div class="job-info">
@@ -303,11 +302,14 @@
                 {{-- Debut du formulaire --}}
                 <form action="{{ Route('Envois-CV-Postulant',['emploi_Id'=>$emploi->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
-
                         {{-- Debut Modal body --}}
                         <div class="modal-body" aria-describedby="content">
+                            {{-- importation du cv --}}
                             <label for="cv">Sélectionner votre CV Svp!</label>
                             <input type="file" name="cv" id="cv" class="form-control">
+                            {{-- importation de la lettre de motivation --}}
+                            <label for="lettre_moti">Sélectionner votre lettre de motivation Svp!</label>
+                            <input type="file" name="lettre_moti" id="lettre_moti" class="form-control">
                         </div>
                         {{-- fin de la modal body --}}
 

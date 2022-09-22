@@ -119,7 +119,7 @@ class UserController extends Controller
             'lastName' => 'required|min:2|string',
             'phone' => 'required|min:9|string',
             'role_id' => 'required',
-            'email'  => 'required|email|max:255'
+            'email'  => 'required|email|max:255',
         ];
 
         $customMessages = [
