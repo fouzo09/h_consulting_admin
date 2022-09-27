@@ -26,7 +26,9 @@
             </div>
             <div class="form-group">
                 <label for="#">Description</label>
-                <p>{{$service->description}}</p>
+                <p>
+                   {!! html_entity_decode($service->description) !!}
+                </p>
             </div>
             <div class="form-group">
                 <h5 for="#">Logo</h5>

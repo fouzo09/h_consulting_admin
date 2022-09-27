@@ -5,6 +5,7 @@ use App\Permission;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DomaineController;
 use App\Http\Controllers\SecteurController;
+use App\Http\Controllers\CarriereController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HeuristicController;
@@ -49,6 +50,11 @@ Route::post('inscription-user-modal',[UserFrontController::class,'storeModal'])-
  Route::get('Compte-user-connecte-front',[UserFrontController::class,'monCompte'])->name('monCompte');
 
  Route::post('mon-profile',[UserFrontController::class,'monProfile'])->name('monProfile');
+/**
+ * Route des carrières ou services du site.
+ */
+ Route::get('liste-carrière',[CarriereController::class,'index'])->name('listeCarriere');
+
  /**
  * les routes liées à la partie administrations
  */

@@ -129,7 +129,10 @@
                                             </div>
                                             <div class="field-value">
                                                 <a class="fw-600" href="#">
-                                                    {{-- {{\App\Models\Type::find($emploi->type_id)->nom}} --}}
+                                                    @if (\App\Models\Type::find($emploi->type_id))
+                                                     {{\App\Models\Type::find($emploi->type_id)->nom}}
+                                                    @endif
+
                                                 </a>
                                             </div>
                                         </div>
@@ -144,9 +147,11 @@
                                                 <span>Domaines : </span>
                                             </div>
                                             <div class="field-value">
-                                                    {{-- @foreach (json_decode($emploi->domaine_id) as $item)
-                                                        <span>{{\App\Models\Domaine::find($item)->nom}}</span>
-                                                    @endforeach --}}
+                                                    @foreach (json_decode($emploi->domaine_id) as $item)
+                                                        @if (\App\Models\Domaine::find($item))
+                                                            <span>{{\App\Models\Domaine::find($item)->nom}}</span>
+                                                        @endif
+                                                    @endforeach
                                             </div>
                                         </div>
                                         <!-- Single Meta Field Start -->

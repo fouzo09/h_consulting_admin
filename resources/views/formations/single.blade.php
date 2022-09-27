@@ -26,7 +26,9 @@
             </div>
             <div class="form-group">
                 <label for="#">Contenu</label>
-                <p>{{$formation->contenu}}</p>
+                <p>
+                    {!! html_entity_decode($formation->contenu) !!}
+                </p>
             </div>
             <div class="form-group">
                 <label for="#">Formateur</label>

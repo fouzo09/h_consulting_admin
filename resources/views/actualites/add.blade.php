@@ -53,7 +53,7 @@
                 <br>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save "></i>
+                        <i class="fas fa-save"></i>
                         Enregistrer
                     </button>
                 </div>

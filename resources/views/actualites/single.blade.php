@@ -26,11 +26,13 @@
             </div>
             <div class="form-group">
                 <label for="#">Contenu</label>
-                <p>{{$actualite->contenu}}</p>
+                <p>{!! html_entity_decode($actualite->contenu) !!}</p>
             </div>
             <div class="form-group">
-                <label for="#">Date publication</label>
-                <p>{{$actualite->date_publication}}</p>
+              <p>
+                <label for="#">Date publication: </label>
+                {{$actualite->date_pulication}}
+              </p>
             </div>
             <div class="form-group">
                 <h5 for="#">Image</h5>

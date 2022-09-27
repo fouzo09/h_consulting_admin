@@ -37,7 +37,10 @@
                                   <td>{{ $index++ }}</td>
                                   <td><img src="{{ asset('assets/img/service/'.$service->image) }}" width="100px" height="100px" alt=""></td>
                                   <td>{{ $service->libelle }}</td>
-                                  <td>{{ str_limit($service->description, 100) }}</td>
+                                  <td>
+                                    <?php $description = str_limit($service->description, 200) ?>
+                                        {!! html_entity_decode($description) !!}
+                                  </td>
                                   <td>
                                     <a href="{{route('delete.service',$service)}}" class="btn btn-info btn-alt btn-xs">
                                         <i class="fa fa-trash icon-remove"></i>
