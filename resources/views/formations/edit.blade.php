@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Contenu</label>
-                    <textarea class="form-control" name="contenu" id="" cols="30" rows="10">{{$formation->contenu}}</textarea>
+                    <textarea class="form-control" name="contenu" id="summary-ckeditor" cols="30" rows="10">{{$formation->contenu}}</textarea>
                     @if($errors->has('contenu'))
                         <div class="error text-danger">{{ $errors->first('contenu') }}</div>
                     @endif
@@ -52,7 +52,10 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Modifier</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Modifier
+                    </button>
                 </div>
             </form>
         </div>

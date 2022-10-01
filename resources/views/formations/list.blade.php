@@ -36,9 +36,15 @@
                     @foreach($formations as $formation)
                         <tr>
                             <td>{{ $index++ }}</td>
-                            <td><img src="{{ asset('assets/img/formation/'.$formation->image) }}" width="100px" height="100px" alt=""></td>
+                            <td>
+                                <img src="{{ asset('assets/img/formation/'.$formation->image) }}"
+                                width="100px" height="100px" alt="">
+                            </td>
                             <td>{{ $formation->titre }}</td>
-                            <td>{{ str_limit($formation->contenu, 100) }}</td>
+                            <td>
+                                <?php $contenu = str_limit($formation->contenu, 200) ?>
+                                    {!! html_entity_decode($contenu) !!}
+                            </td>
                             <td>{{ $formation->formateur }}</td>
                             <td>
                                 <a href="{{route('delete.formation',$formation)}}" class="btn btn-info btn-alt btn-xs">

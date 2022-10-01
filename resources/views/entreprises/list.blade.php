@@ -37,7 +37,9 @@
                             <td>{{ $index++ }}</td>
                             <td><img src="{{ asset('assets/img/entreprise/'.$entreprise->logo) }}" width="100px" height="100px" alt=""></td>
                             <td>{{ $entreprise->raison_sociale }}</td>
-                            <td>{{ $entreprise->adresse }}</td>
+                            <td>
+                                {{ $entreprise->adresse }}
+                            </td>
                             <td>
                                 <a href="{{route('delete.entreprise',$entreprise)}}" class="btn btn-info btn-alt btn-xs">
                                     <i class="fa fa-trash icon-remove"></i>

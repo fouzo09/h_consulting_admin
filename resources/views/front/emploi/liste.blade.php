@@ -23,21 +23,9 @@
         <div class="job-listing-section section bg_color--5 pb-120 pb-lg-100 pb-md-80 pb-sm-60 pb-xs-50">
             <div class="container">
                 <div class="row g-0">
-
                     <div class="col-lg-4 order-lg-1 order-2 pr-55 pr-md-15 pr-sm-15 pr-xs-15">
                         <div class="sidebar-wrapper-two mt-sm-40 mt-xs-40">
-                            <div class="common-sidebar-widget sidebar-two">
-                                <h2 class="sidebar-title">Chercher une offre </h2>
-                                <div class="sidebar-search-form-two">
-                                    <form action="#">
-                                        <div class="input-group">
-                                            <input type="text" name="search" placeholder="Search...">
-                                            <i class="lnr lnr-magnifier"></i>
-                                        </div>
-                                        <button type="submit" class="ht-btn theme-btn theme-btn-two w-100">Rechercher</button>
-                                    </form>
-                                </div>
-                            </div>
+
                             <div class="common-sidebar-widget sidebar-two">
                                 <h2 class="sidebar-title">Experience</h2>
                                 <ul class="sidebar-cbx-list">
@@ -126,7 +114,6 @@
                                             </div>
                                         </li>
                                     @endforeach
-
                                 </ul>
                             </div>
                             <div class="common-sidebar-widget sidebar-two">
@@ -167,7 +154,7 @@
                                                             <div class="job-info-top">
                                                                 <div class="saveJob for-listing">
                                                                     <!-- <span class="featured-label">featured</span> -->
-                                                                    <a  class="job-type-label ml-20 mr-20">{{ $item->type->nom }}</a>
+                                                                    <a  class="job-type-label ml-20 mr-20"></a>
                                                                     <a class="save-job" href="#quick-view-modal-container" data-toggle="modal">
                                                                         <i class="far fa-heart"></i>
                                                                     </a>

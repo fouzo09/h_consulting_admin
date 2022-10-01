@@ -9,8 +9,6 @@ use App\Models\Actualite;
 
 class ActualiteController extends Controller
 {
-
-
     public function getIndex(){
         $actualites = Actualite::all();
         return view('actualites.list', compact('actualites'));
@@ -39,11 +37,10 @@ class ActualiteController extends Controller
         request()->image->move(public_path('assets/img/actualite'), $filename);
 
         $actualite = new Actualite();
-
         $actualite->image    = $filename;
         $actualite->titre    = request()->titre;
         $actualite->contenu  = request()->contenu;
-        $actualite->date_publication = request()->date_publication;
+        $actualite->date_pulication = request()->date_publication;
         $actualite->user_id  = 1;
 
         if($actualite->save()){

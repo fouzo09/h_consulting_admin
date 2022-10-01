@@ -11,13 +11,13 @@
             <div class="card-header p-0 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-four-home-tab"  href="{{route('users-list')}}"  aria-selected="false">
+                        <a class="nav-link" id="custom-tabs-four-home-tab"  href="{{route('list.users')}}"  aria-selected="false">
                             <i class="nav-icon fas fa-list"></i>
                             Liste des utilisateurs
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="custom-tabs-four-home-tab"  href="{{route('users-list')}}"  aria-selected="false">
+                        <a class="nav-link" id="custom-tabs-four-home-tab"  href="{{route('list.users')}}"  aria-selected="false">
                             <i class="nav-icon fas fa-add"></i>
                             Enregistrer un utilisateur
                         </a>
@@ -39,6 +39,19 @@
 
                     </div>
                     <div class="tab-pane fade active show" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                        <span>
+                            <!-- verification de la valider des informations -->
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <!-- fin de la verification des informations -->
+                        </span>
                         <form action="{{ route('user.edit',$user->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
@@ -133,7 +146,10 @@
                             @endif
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <button type="submit" class="btn btn-dark">Modifier</button>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-edit"></i>
+                                            Modifier
+                                        </button>
                                     </div>
                                 </div>
                             </div>

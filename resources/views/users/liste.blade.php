@@ -42,10 +42,10 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->nom }}</td>
                             <td>
-                                <a href="{{route('user.delete',$user)}}" class="btn btn-info btn-alt btn-xs">
+                                <a href="{{route('user.delete',$user->id)}}" class="btn btn-info btn-alt btn-xs">
                                     <i class="fa fa-trash icon-remove"></i>
                                 </a>
-                                <a href="{{route('user.edit.form',$user)}}" class="btn btn-info btn-alt btn-xs">
+                                <a href="{{route('user.edit.form',$user->id)}}" class="btn btn-info btn-alt btn-xs">
                                     <i class="fa fa-edit icon-edit"></i>
                                 </a>
                             </td>

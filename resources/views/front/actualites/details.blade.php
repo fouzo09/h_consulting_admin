@@ -27,15 +27,15 @@
                         <div class="card">
                             <div class="card-body">
                                 <p>
-                                    {{ $actualite->contenu }}
+                                    {!! html_entity_decode($actualite->contenu) !!}
                                 </p>
-                                
+
                                 <p>
                                     <strong>Date de publication </strong>: {{ $actualite->date_publication }}
                                 </p>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>

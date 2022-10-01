@@ -119,7 +119,7 @@ class UserController extends Controller
             'lastName' => 'required|min:2|string',
             'phone' => 'required|min:9|string',
             'role_id' => 'required',
-            'email'  => 'required|email|max:255'
+            'email'  => 'required|email|max:255',
         ];
 
         $customMessages = [
@@ -128,8 +128,6 @@ class UserController extends Controller
 
         $this->validate(request(), $rules, $customMessages);
             $user = User::findOrFail($id);
-
-
             $user->firstName = $request->firstName;
             $user->lastName = $request->lastName;
             $user->phone = $request->phone;
@@ -138,7 +136,7 @@ class UserController extends Controller
             if($user->update()){
                 return redirect(route('list.users'))->with('success', 'Utilisateur modifié avec success') ;
             }else{
-            return back()->with('error', "Erreur! lors de la modification de l'utilisateur")->with('roles','$roles');
+                return back()->with('error', "Erreur! lors de la modification de l'utilisateur")->with('roles','$roles');
             }
     }
 

@@ -19,15 +19,15 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url('img/img_essai.jpg')">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>HCONSULTING</b></a>
+    <a href="#" style="color:white"><b>HCONSULTING</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      
+
       <div class="card-header">{{ __('Connectez-vous') }}</div>
 
       <div class="card-body">
@@ -60,7 +60,7 @@
 
               <div class="form-group row mb-0">
                   <div class="col-md-12">
-                      <button type="submit" class="btn btn-dark">
+                      <button type="submit" class="btn btn-primary">
                           {{ __('Connexion') }}
                       </button>
 

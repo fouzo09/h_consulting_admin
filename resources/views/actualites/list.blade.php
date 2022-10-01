@@ -34,13 +34,17 @@
                 <tbody>
                     @if($actualites)
                         <?php $index = 1; ?>
+
                         @foreach($actualites as $actualite)
                             <tr>
                                 <td>{{ $index++ }}</td>
                                 <td><img src="{{ asset('assets/img/actualite/'.$actualite->image) }}" width="100px" height="100px" alt=""></td>
                                 <td>{{ $actualite->titre }}</td>
-                                <td>{{ str_limit($actualite->contenu, 100) }}</td>
-                                <td>{{ $actualite->date_publication }}</td>
+                                <td>
+                                    <?php $contenu = str_limit($actualite->contenu, 200) ?>
+                                    {!! html_entity_decode($contenu) !!}
+                                </td>
+                                <td>{{ $actualite->date_pulication }}</td>
                                 <td>
                                     <a href="{{route('delete.actualite',$actualite)}}" class="btn btn-info btn-alt btn-xs">
                                         <i class="fa fa-trash icon-remove"></i>

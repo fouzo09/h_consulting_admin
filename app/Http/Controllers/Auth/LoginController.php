@@ -73,7 +73,8 @@ class LoginController extends Controller
 
             if ($user->role_id == 1){
 
-                return redirect()->route('list.servi');
+                return redirect()->route('dashboard')
+                                 ->with('info','Bienvenue dans la partie administration de Hconsulting');
 
             }else{
 

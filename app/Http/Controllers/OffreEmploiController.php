@@ -23,7 +23,6 @@ class OffreEmploiController extends Controller
         $domaines      = Domaine::orderBy('id', 'DESC')->get();
         return view("front.emploi.liste", compact('offresEmplois','types','villes','secteurs','grades','formations','domaines'));
     }
-
     public function getDetailsOffreEmploi(Emploi $emploi)
     {
         $relatedJobs = Emploi::where("secteur_id",$emploi->secteur_id)->get();

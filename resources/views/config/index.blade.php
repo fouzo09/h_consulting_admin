@@ -7,14 +7,14 @@
           <div class="col-sm-9">
             <h1>Configuration de la plateforme</h1>
           </div>
-          
+
         </div>
       </div><!-- /.container-fluid -->
     </section>
     <hr>
 
-    
-   
+
+
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->
@@ -69,7 +69,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save "></i>
+                        Enregistrer
+                    </button>
                 </div>
             </form>
         </div>
