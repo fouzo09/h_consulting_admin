@@ -29,7 +29,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $actualite->titre }}</h5>
                                     <p class="card-text">
-                                        {{ str_limit($actualite->contenu, 100) }}
+                                        <?php $contenu = str_limit($actualite->contenu, 200) ?>
+                                        {!! html_entity_decode($contenu) !!}
                                     </p>
                                     <a href="{{ url('actualite', $actualite->id) }}">Voir plus</a>
                                 </div>

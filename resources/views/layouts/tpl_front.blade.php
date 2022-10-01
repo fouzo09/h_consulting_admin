@@ -28,7 +28,7 @@
             content : none !important;
             background-color: inherit !important;
         }
-        
+
         .menu-item:hover::before{
             content : none !important;
             background-color: inherit !important;
@@ -77,12 +77,12 @@
                         <h6 class="title">Accès rapides</h6>
                         <div class="footer-widget-link">
                             <ul>
-                                <li><a href="#">Acceuil</a></li>
-                                <li><a href="#">Emplois</a></li>
-                                <li><a href="#">Heuristic</a></li>
-                                <li><a href="#">Formations</a></li>
-                                <li><a href="#">Actualités</a></li>
-                                <li><a href="#">Mon compte</a></li>
+                                <li><a href="{{ url('/') }}">Acceuil</a></li>
+                                <li><a href="{{ url('offres-emplois') }}">Emplois</a></li>
+                                <li><a href="{{ url('heuristic').'#services' }}">Heuristic</a></li>
+                                <li><a href="{{ url('formations') }}">Formations</a></li>
+                                <li><a href="{{ url('actualites') }}">Actualités</a></li>
+                                <li><a href="{{ Route('monCompte') }}">Mon compte</a></li>
                             </ul>
                         </div>
                     </div>

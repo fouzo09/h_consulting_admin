@@ -112,10 +112,10 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Contenu</label>
-                    <textarea class="form-control" name="contenu" id="" cols="30" rows="10"></textarea>
-                    @if($errors->has('contenu'))
-                        <div class="error">{{ $errors->first('contenu') }}</div>
-                    @endif
+                    <textarea class="form-control" name="contenu" id="summary-ckeditor" cols="30" rows="10"></textarea>
+                        @if($errors->has('contenu'))
+                            <div class="error">{{ $errors->first('contenu') }}</div>
+                        @endif
                 </div>
                 <div class="form-group">
                     <label for="#">Date publication</label>
@@ -140,7 +140,10 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save "></i>
+                        Enregistrer
+                    </button>
                 </div>
             </form>
         </div>

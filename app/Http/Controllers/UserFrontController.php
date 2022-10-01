@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UserFrontController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -110,58 +101,41 @@ class UserFrontController extends Controller
                           ->with('error','Le mot de passe et la confirmation ne coincide pas');
     }
 }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function monCompte(){
+        $user = User::find(Auth::User()->id);
        // $AppUserJob = EmploiUser::where('User_id',Auth::User()->id)->get();
         $postulant = Emploi::join('emploi_users', 'emploi_users.Emploi_id', '=', 'emplois.id')
                         ->where('emploi_users.User_id',Auth::User()->id)
                         ->select('emploi_users.*','emplois.titre','emplois.contenu')
                         ->get();
+        return view('front.users.monCompte')->with(['postulant'=>$postulant,'user'=>$user]);
+    }
 
-        return view('front.users.monCompte')->with('postulant',$postulant);
+    public function monProfile(Request $request){
+        
+        // verification des information à valider
+        $request->validate([
+            'firstName'=>'required',
+            'lastName'=>'required',
+            'email'=>'required',
+            'phone'=>'required'
+        ]);
+        // fin de la verification des informations
+
+        //Mise à jour du Profile
+        $profile = User::find(Auth::User()->id);
+        $profile->update([
+            'firstName'=>$request->firstName,
+            'lastName'=>$request->lastName,
+            'email'=>$request->email,
+            'phone'=>$request->phone
+        ]);
+        //fin de la mise à jour du Profile.
+
+        //la redirection de la page.
+        return redirect()->route('monCompte')
+                         ->with('success','Mise à jour du Profile effectué avec succès');
     }
 }

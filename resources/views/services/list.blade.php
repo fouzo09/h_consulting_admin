@@ -5,10 +5,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-10">
-            <h1>Liste des services</h1>
+            <h1>Liste des Carrières</h1>
           </div>
           <div class="col-sm-2 pull-right">
-            <a href="{{ url('admin/add-service') }}" class="btn btn-default btn-md"><strong>Ajouter un service</strong></a>
+            <a href="{{ url('admin/add-service') }}" class="btn btn-default btn-md"><strong>Ajouter une carrière</strong></a>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -37,7 +37,10 @@
                                   <td>{{ $index++ }}</td>
                                   <td><img src="{{ asset('assets/img/service/'.$service->image) }}" width="100px" height="100px" alt=""></td>
                                   <td>{{ $service->libelle }}</td>
-                                  <td>{{ str_limit($service->description, 100) }}</td>
+                                  <td>
+                                    <?php $description = str_limit($service->description, 200) ?>
+                                        {!! html_entity_decode($description) !!}
+                                  </td>
                                   <td>
                                     <a href="{{route('delete.service',$service)}}" class="btn btn-info btn-alt btn-xs">
                                         <i class="fa fa-trash icon-remove"></i>

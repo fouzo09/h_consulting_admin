@@ -10,6 +10,7 @@ class EmploiUser extends Model
         'Emploi_id',
         'User_id',
         'CV',
+        'lettre_moti',
         'date_de_la_postulation'
     ];
 }

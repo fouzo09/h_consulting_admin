@@ -22,7 +22,10 @@
                             <div class="jp-author-action item" style="background-color: #F96046; color:black">
                                 @if(auth()->check())
                                     <a href="{{ Route('monCompte') }}" style="color:black">
-                                            <span class="fw-400">Mon compte</span>
+                                            <span class="fw-400">
+                                                <i class="fas fa-user"></i>
+                                                {{ Auth::User()->firstName.' '.Auth::User()->lastName }}
+                                            </span>
                                     </a>
                                 @else
                                     <a href="{{ Route('user-connexion-inscription') }}" style="color:black">
@@ -129,7 +132,7 @@
                         <!-- Start Dropdown Menu -->
                         <ul class="object-submenu">
                             <li><a href="{{ url('heuristic').'#services' }}"><span>A propos</span></a></li>
-                            <li><a href="{{ url('heuristic').'#who' }}"><span>Carrière</span></a></li>
+                            <li><a href="{{ Route('listeCarriere') }}"><span>Carrière</span></a></li>
                             <li><a href="{{ url('actualites') }}"><span>Actualité</span></a></li>
                         </ul>
                         <!-- End Dropdown Menu -->
@@ -224,7 +227,7 @@
         <div class="content-popup-scroll">
             <ul class="list-item">
                 <li><a href="{{ url('heuristic').'#services' }}"><i class="lnr lnr-printer"></i>A propos </a></li>
-                <li><a href="{{ url('heuristic').'#who' }}"><i class="lnr lnr-film-play"></i>Carrière</a></li>
+                <li><a href="{{ Route('listeCarriere') }}"><i class="lnr lnr-film-play"></i>Carrière</a></li>
                 <li><a href="{{ url('actualites') }}"><i class="lnr lnr-phone"></i>Actualité</a></li>
             </ul>
         </div>
@@ -239,15 +242,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
                     <!--Hero Content start-->
                     <div class="hero-content-2 left">
                         <!-- <h2 class="title">Top Recruiting Website</h2>
                         <h3 class="sub-title">For Professionals</h3>
                         <p>Jobs & Job search. Find jobs in global. Executive jobs & work. Employment</p> -->
                     </div>
-
-
                 </div>
             </div>
         </div>

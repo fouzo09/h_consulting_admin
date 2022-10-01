@@ -70,7 +70,7 @@
                         <div class="error text-danger">{{ $errors->first('types') }}</div>
                     @endif
                 </div>
-                
+
                 <div class="form-group">
                     <label for="#">Domaines</label>
 
@@ -113,7 +113,9 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Contenu</label>
-                    <textarea class="form-control" name="contenu" id="" cols="30" rows="10">{{$emploi->contenu}}</textarea>
+                    <textarea class="form-control" name="contenu" id="summary-ckeditor" cols="30" rows="10">
+                        {{$emploi->contenu}}
+                    </textarea>
                     @if($errors->has('contenu'))
                         <div class="error text-danger">{{ $errors->first('contenu') }}</div>
                     @endif
@@ -141,7 +143,10 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Modifier</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-edit "></i>
+                        Modifier
+                    </button>
                 </div>
             </form>
         </div>

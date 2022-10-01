@@ -5,10 +5,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-10">
-            <h1>Modifier les information du service</h1>
+            <h1>Modifier les information de la carrière</h1>
           </div>
           <div class="col-sm-2 pull-right">
-            <a href="{{ url('admin/list-services') }}" class="btn btn-default btn-md"><strong>Afficher les services</strong></a>
+            <a href="{{ url('admin/list-services') }}" class="btn btn-default btn-md"><strong>Afficher les carrières</strong></a>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Description</label>
-                    <textarea class="form-control" name="description" id="" cols="30" rows="10">{{$service->description}}</textarea>
+                    <textarea class="form-control" name="description" id="summary-ckeditor" cols="30" rows="10">{{$service->description}}</textarea>
                     @if($errors->has('description'))
                         <div class="error text-danger">{{ $errors->first('description') }}</div>
                     @endif
@@ -45,7 +45,9 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Modifier</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-edit"></i>
+                        Modifier</button>
                 </div>
             </form>
         </div>
