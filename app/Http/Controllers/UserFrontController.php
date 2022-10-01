@@ -87,7 +87,7 @@ class UserFrontController extends Controller
         ]);
 
         $confirmerPass = $request->conPassword;
-        $password = $request->password;
+        $password      = $request->password;
 
         if($password == $confirmerPass){
 
